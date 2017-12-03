@@ -17,8 +17,8 @@ title: Welcom to Jamie's Home
 email: jamie.cui@outlook.com
 description: >- # this means to ignore newlines until "baseurl:"
   Student ... of Computer Security(?)
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://jamie2cui.github.io/Jamie-Home/" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/Jamie-Home/" # the subpath of your site, e.g. /blog
+url: "https://jamie2cui.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 github_username:  Jamie2Cui
 
