@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-12-03T16:50:57+00:00</updated><id>/</id><title type="html">Welcom to Jamie’s Home</title><subtitle>Student ... of Computer Security(?)</subtitle><entry><title type="html">Cryptography</title><link href="/jekyll/update/2017/12/03/crypto.html" rel="alternate" type="text/html" title="Cryptography" /><published>2017-12-03T13:38:16+00:00</published><updated>2017-12-03T13:38:16+00:00</updated><id>/jekyll/update/2017/12/03/crypto</id><content type="html" xml:base="/jekyll/update/2017/12/03/crypto.html">&lt;p&gt;首先是一些密码学的基础概念，之后不再赘述：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;密钥(key)&lt;/code&gt;：在密码学中密钥可以被当做一个加密或者解密的参数，当执行加密或者解密过程中会同密文(Cipher)或者明文(Message)一起输入到加密或者解密方程，从而达成目的。没有密钥是无法完成解密和加密过程，密钥分为两种：Secret Key 和 Public Key。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;加密和解密&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;首先介绍一下&lt;code class=&quot;highlighter-rouge&quot;&gt;对称加密(Symmetric Encryption)&lt;/code&gt;,这是最基础和最简单的一种加密模式。&lt;code class=&quot;highlighter-rouge&quot;&gt;对称加密&lt;/code&gt;意味着加密和解密双方使用了相同的密钥来进行加密和解密&lt;/p&gt;
+
+&lt;p&gt;首先介绍一下&lt;code class=&quot;highlighter-rouge&quot;&gt;流加密(Stream Cipher)&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;流加密&lt;/code&gt;是一种加密算法，加密和解密运用相同的伪随机加密流作为密钥。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">首先是一些密码学的基础概念，之后不再赘述： 密钥(key)：在密码学中密钥可以被当做一个加密或者解密的参数，当执行加密或者解密过程中会同密文(Cipher)或者明文(Message)一起输入到加密或者解密方程，从而达成目的。没有密钥是无法完成解密和加密过程，密钥分为两种：Secret Key 和 Public Key。</summary></entry><entry><title type="html">Security Definition</title><link href="/jekyll/update/2017/12/03/security.html" rel="alternate" type="text/html" title="Security Definition" /><published>2017-12-03T12:38:16+00:00</published><updated>2017-12-03T12:38:16+00:00</updated><id>/jekyll/update/2017/12/03/security</id><content type="html" xml:base="/jekyll/update/2017/12/03/security.html">&lt;p&gt;这篇 post 会讲述一下什么是&lt;code class=&quot;highlighter-rouge&quot;&gt;计算机安全&lt;/code&gt;，我们普通人或者一般技术人员应该怎样做到保证自己的安全。请留意下面的一些定义可能会用英文来表述，因为在某些情况下英文表述要优于中文表述。&lt;/p&gt;
+
+&lt;p&gt;首先就是安全包含哪些方面：&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;保密性 (Confidentiality)&lt;/li&gt;
+  &lt;li&gt;完整性 (Integrity)&lt;/li&gt;
+  &lt;li&gt;可用性 (Availability)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;保密性很容易理解，就是给相应授权的人相应的文件，不要泄漏用户不需要看的文件。而完整性是指文件不能被未授权的人（入侵者，普通未授权用户）修改、被删除。因此保密性涉及到的是保密和隐私; 完整性涉及到的是文件写入保护、文件删除保护; 可用性涉及的就是在努力保持安全的前提下可容易让用户有比较好的体验。&lt;/p&gt;
+
+&lt;p&gt;英国政府有一篇指导技术员工维护安全的手册 &lt;a href=&quot;https://www.gov.uk/government/publications/10-steps-to-cyber-security-advice-sheets&quot;&gt;10 Steps to Cyber Security: Advice Sheets&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;简单的来说的话我们可以把网络安全设置分为一下几个方面 (Cyber Essentials)：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;安全设置 (Security Configuration)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;引用 &lt;em&gt;Verizon 2015 Data Breach Investigations Report&lt;/em&gt;，大多数网络安全隐患都是来源于网络管理员使用了不恰当的防护设置，如默认密码，默认帐号没修改、删除，或者某些自启动（并且不安全）的软件没有被关闭，防火墙忘记打开等等。因此我们需要注意在设置防火墙的时候不仅要设置ACCEPT我们需要的连接，也要DROPk所有未经允许的连接。
+&lt;img src=&quot;/asset/1.png&quot; alt=&quot;Drawing&quot; style=&quot;width: 600px;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;网关控制 (Boundary firewall and internet gateways)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;网关控制和安全设置相比更加具体化，这里的网关控制指的是要控制进入私网或者敏感网络的权限。一般私网会通过一个路由器与外界网络互相连接，所以如果网关\路由器防火墙被正确设置了，入侵者就连网络都进不去。因此我们称网关控制是抵御攻击的第一道防线。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;权限控制 (Access control and administrative privilege management)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;这点就是分配给用户特定的权限，不要给予用户过多权限，root密码要复杂化等等。这里比较著名的一个例子是曾经有一个US公司管理人员将用户信息贩卖给了online theft services导致了很严重的后果。感兴趣的话可以查看一下这个例子。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://krebsonsecurity.com/2013/10/experian-sold-consumer-data-to-id-theft-service/&quot;&gt;Experian Sold Consumer Data to ID Theft Service&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;包管理 (Patch management)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Patch是软件公司发现软件漏洞后的最后的补救方法，因此系统上的软件一定要保持与软件提供商的跟新进度。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;恶意软件防护 (Malware protection)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;这个是废话。。。&lt;/p&gt;</content><author><name></name></author><summary type="html">这篇 post 会讲述一下什么是计算机安全，我们普通人或者一般技术人员应该怎样做到保证自己的安全。请留意下面的一些定义可能会用英文来表述，因为在某些情况下英文表述要优于中文表述。</summary></entry><entry><title type="html">Network Security</title><link href="/jekyll/update/2017/12/03/networking.html" rel="alternate" type="text/html" title="Network Security" /><published>2017-12-03T12:38:16+00:00</published><updated>2017-12-03T12:38:16+00:00</updated><id>/jekyll/update/2017/12/03/networking</id><content type="html" xml:base="/jekyll/update/2017/12/03/networking.html"></content><author><name></name></author><summary type="html"></summary></entry></feed>
