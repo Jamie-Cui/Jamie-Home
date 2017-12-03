@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "Cryptography"
+date:   2017-12-03 13:38:16 +0000
+categories: jekyll update
+---
+首先是一些密码学的基础概念，之后不再赘述：
+1. `密钥(key)`：在密码学中密钥可以被当做一个加密或者解密的参数，当执行加密或者解密过程中会同密文(Cipher)或者明文(Message)一起输入到加密或者解密方程，从而达成目的。没有密钥是无法完成解密和加密过程，密钥分为两种：Secret Key 和 Public Key。
+
+2. `加密和解密`
+
+首先介绍一下`对称加密(Symmetric Encryption)`,这是最基础和最简单的一种加密模式。`对称加密`意味着加密和解密双方使用了相同的密钥来进行加密和解密
+
+首先介绍一下`流加密(Stream Cipher)`，`流加密`是一种加密算法，加密和解密运用相同的伪随机加密流作为密钥。
+
+
+{% highlight ruby %}
+def print_hi(name)
+  puts "Hi, #{name}"
+end
+print_hi('Tom')
+#=> prints 'Hi, Tom' to STDOUT.
+{% endhighlight %}
+
+Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+
+[jekyll-docs]: https://jekyllrb.com/docs/home
+[jekyll-gh]:   https://github.com/jekyll/jekyll
+[jekyll-talk]: https://talk.jekyllrb.com/
