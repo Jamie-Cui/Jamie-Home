@@ -72,7 +72,7 @@
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">Security Definition</h1>
     <p class="post-meta">
-      <time datetime="2017-12-03T20:40:00+00:00" itemprop="datePublished">
+      <time datetime="2017-12-03T12:00:00+00:00" itemprop="datePublished">
         
         Dec 3, 2017
       </time>
@@ -95,26 +95,26 @@
 
 <p>简单的来说的话我们可以把网络安全设置分为一下几个方面 (Cyber Essentials)：</p>
 
-<p><strong>安全设置 (Security Configuration)</strong></p>
+<h1 id="安全设置-security-configuration"><strong>安全设置 (Security Configuration)</strong></h1>
 
 <p>引用 <em>Verizon 2015 Data Breach Investigations Report</em>，大多数网络安全隐患都是来源于网络管理员使用了不恰当的防护设置，如默认密码，默认帐号没修改、删除，或者某些自启动（并且不安全）的软件没有被关闭，防火墙忘记打开等等。因此我们需要注意在设置防火墙的时候不仅要设置ACCEPT我们需要的连接，也要DROPk所有未经允许的连接。
-<img src="http://localhost:4000/img/1.png" alt="Drawing" style="width: 600px;" /></p>
+<img src="http://localhost:4000/img/Misconfig.png" alt="Drawing" style="width: 600px;" /></p>
 
-<p><strong>网关控制 (Boundary firewall and internet gateways)</strong></p>
+<h1 id="网关控制-boundary-firewall-and-internet-gateways"><strong>网关控制 (Boundary firewall and internet gateways)</strong></h1>
 
 <p>网关控制和安全设置相比更加具体化，这里的网关控制指的是要控制进入私网或者敏感网络的权限。一般私网会通过一个路由器与外界网络互相连接，所以如果网关\路由器防火墙被正确设置了，入侵者就连网络都进不去。因此我们称网关控制是抵御攻击的第一道防线。</p>
 
-<p><strong>权限控制 (Access control and administrative privilege management)</strong></p>
+<h1 id="权限控制-access-control-and-administrative-privilege-management"><strong>权限控制 (Access control and administrative privilege management)</strong></h1>
 
 <p>这点就是分配给用户特定的权限，不要给予用户过多权限，root密码要复杂化等等。这里比较著名的一个例子是曾经有一个US公司管理人员将用户信息贩卖给了online theft services导致了很严重的后果。感兴趣的话可以查看一下这个例子。</p>
 
 <p><a href="http://krebsonsecurity.com/2013/10/experian-sold-consumer-data-to-id-theft-service/">Experian Sold Consumer Data to ID Theft Service</a></p>
 
-<p><strong>包管理 (Patch management)</strong></p>
+<h1 id="包管理-patch-management"><strong>包管理 (Patch management)</strong></h1>
 
 <p>Patch是软件公司发现软件漏洞后的最后的补救方法，因此系统上的软件一定要保持与软件提供商的跟新进度。</p>
 
-<p><strong>恶意软件防护 (Malware protection)</strong></p>
+<h1 id="恶意软件防护-malware-protection"><strong>恶意软件防护 (Malware protection)</strong></h1>
 
 <p>这个是废话。。。当然所有人都应该安装杀毒软件</p>
 

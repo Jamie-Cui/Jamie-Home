@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Security Definition"
-date:   2017-12-03 20:40:00 +0000
+date:   2017-12-03 12:00:00 +0000
 categories: jekyll update
 ---
 这篇 post 会讲述一下什么是`计算机安全`，我们普通人或者一般技术人员应该怎样做到保证自己的安全。请留意下面的一些定义可能会用英文来表述，因为在某些情况下英文表述要优于中文表述。
@@ -17,26 +17,26 @@ categories: jekyll update
 
 简单的来说的话我们可以把网络安全设置分为一下几个方面 (Cyber Essentials)：
 
-**安全设置 (Security Configuration)**
+# **安全设置 (Security Configuration)**
 
 引用 *Verizon 2015 Data Breach Investigations Report*，大多数网络安全隐患都是来源于网络管理员使用了不恰当的防护设置，如默认密码，默认帐号没修改、删除，或者某些自启动（并且不安全）的软件没有被关闭，防火墙忘记打开等等。因此我们需要注意在设置防火墙的时候不仅要设置ACCEPT我们需要的连接，也要DROPk所有未经允许的连接。
-<img src="{{site.url}}{{site.baseurl}}/img/1.png" alt="Drawing" style="width: 600px;"/>
+<img src="{{site.url}}{{site.baseurl}}/img/Misconfig.png" alt="Drawing" style="width: 600px;"/>
 
-**网关控制 (Boundary firewall and internet gateways)**
+# **网关控制 (Boundary firewall and internet gateways)**
 
 网关控制和安全设置相比更加具体化，这里的网关控制指的是要控制进入私网或者敏感网络的权限。一般私网会通过一个路由器与外界网络互相连接，所以如果网关\路由器防火墙被正确设置了，入侵者就连网络都进不去。因此我们称网关控制是抵御攻击的第一道防线。
 
-**权限控制 (Access control and administrative privilege management)**
+# **权限控制 (Access control and administrative privilege management)**
 
 这点就是分配给用户特定的权限，不要给予用户过多权限，root密码要复杂化等等。这里比较著名的一个例子是曾经有一个US公司管理人员将用户信息贩卖给了online theft services导致了很严重的后果。感兴趣的话可以查看一下这个例子。
 
 [Experian Sold Consumer Data to ID Theft Service][example-priv]
 
-**包管理 (Patch management)**
+# **包管理 (Patch management)**
 
 Patch是软件公司发现软件漏洞后的最后的补救方法，因此系统上的软件一定要保持与软件提供商的跟新进度。
 
-**恶意软件防护 (Malware protection)**
+# **恶意软件防护 (Malware protection)**
 
 这个是废话。。。当然所有人都应该安装杀毒软件
 
