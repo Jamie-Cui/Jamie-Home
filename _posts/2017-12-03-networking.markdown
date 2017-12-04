@@ -64,7 +64,7 @@ Anyway，举这个例子的目的就是以后大家不要被假冒的URL欺骗�
 
 **SYN Flooding**
 
-SYN洪流攻击（唯一知道中文名字的），要了解这个攻击首先要了解TCP的三次握手协议，SYN发生在TCP的第一次握手过程中。[百度百科][syn-flooding-baidu]
+据统计，在所有黑客攻击事件中，SYN攻击是最常见又最容易被利用的一种攻击手法。相信很多人还记得2000年YAHOO网站遭受的攻击事例，当时黑客利用的就是简单而有效的SYN攻击，有些网络蠕虫病毒配合SYN攻击造成更大的破坏。本文介绍SYN攻击的基本原理、工具及检测方法，并全面探讨SYN攻击防范技术。[百度百科][syn-flooding-baidu]
 
 
 <img src="{{site.url}}{{site.baseurl}}/img/Dos.png" alt="Drawing" style="width: 600px;"/>  
