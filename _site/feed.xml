@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-12-04T18:12:58+00:00</updated><id>http://localhost:4000/</id><title type="html">Welcom to Jamie’s Home</title><subtitle>Student ... of Computer Security(?)</subtitle><entry><title type="html">Network Security</title><link href="http://localhost:4000/jekyll/update/2017/12/04/networking.html" rel="alternate" type="text/html" title="Network Security" /><published>2017-12-04T12:38:16+00:00</published><updated>2017-12-04T12:38:16+00:00</updated><id>http://localhost:4000/jekyll/update/2017/12/04/networking</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2017/12/04/networking.html">&lt;p&gt;这一篇我们要讲一些关于网络安全的种种，和上一篇一样，先讲述一下关于 &lt;code class=&quot;highlighter-rouge&quot;&gt;Computer networking&lt;/code&gt; 的一些基础知识。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-12-04T18:17:31+00:00</updated><id>http://localhost:4000/</id><title type="html">Welcom to Jamie’s Home</title><subtitle>Student ... of Computer Security(?)</subtitle><entry><title type="html">Network Security</title><link href="http://localhost:4000/jekyll/update/2017/12/04/networking.html" rel="alternate" type="text/html" title="Network Security" /><published>2017-12-04T12:38:16+00:00</published><updated>2017-12-04T12:38:16+00:00</updated><id>http://localhost:4000/jekyll/update/2017/12/04/networking</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2017/12/04/networking.html">&lt;p&gt;这一篇我们要讲一些关于网络安全的种种，和上一篇一样，先讲述一下关于 &lt;code class=&quot;highlighter-rouge&quot;&gt;Computer networking&lt;/code&gt; 的一些基础知识。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;URL—最基础的诈骗&lt;/strong&gt;&lt;/p&gt;
 
@@ -42,7 +42,7 @@
 
 &lt;p&gt;引用 &lt;em&gt;Verizon 2015 Data Breach Investigations Report&lt;/em&gt;，大多数网络安全隐患都是来源于网络管理员使用了不恰当的防护设置，如默认密码，默认帐号没修改、删除，或者某些自启动（并且不安全）的软件没有被关闭，防火墙忘记打开等等。因此我们需要注意在设置防火墙的时候不仅要设置ACCEPT我们需要的连接，也要DROPk所有未经允许的连接。
 &lt;img src=&quot;http://localhost:4000/asset/1.png&quot; alt=&quot;Drawing&quot; style=&quot;width: 600px;&quot; /&gt;
-&lt;img src=&quot;http://localhost:4000/asset/1.png&quot; alt=&quot;haha&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/asset/1.png&quot; alt=&quot;图片&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;网关控制 (Boundary firewall and internet gateways)&lt;/strong&gt;&lt;/p&gt;
 
