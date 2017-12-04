@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Cryptography"
-date:   2017-12-03 13:38:16 +0000
+date:   2017-12-05 13:38:16 +0000
 categories: jekyll update
 ---
 首先是一些密码学的基础概念，之后不再赘述：

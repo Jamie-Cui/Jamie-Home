@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Cryptography</title>
-  <meta name="description" content="首先是一些密码学的基础概念，之后不再赘述： 密钥(key)：在密码学中密钥可以被当做一个加密或者解密的参数，当执行加密或者解密过程中会同密文(Cipher)或者明文(Message)一起输入到加密或者解密方程，从而达成目的。没有密钥是无法完成解密和加密过程，密钥分为两种：Secret Key 和 Public Key。">
+  <title>Network Security</title>
+  <meta name="description" content="这一篇我们要讲一些关于网络安全的种种，和上一篇一样，先讲述一下关于 Computer networking 的一些基础知识。">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/jekyll/update/2017/12/03/crypto.html">
+  <link rel="canonical" href="http://localhost:4000/jekyll/update/2017/12/04/networking.html">
   <link rel="alternate" type="application/rss+xml" title="Welcom to Jamie&#39;s Home" href="/feed.xml">
   
   
@@ -70,37 +70,42 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">Cryptography</h1>
+    <h1 class="post-title" itemprop="name headline">Network Security</h1>
     <p class="post-meta">
-      <time datetime="2017-12-03T13:38:16+00:00" itemprop="datePublished">
+      <time datetime="2017-12-04T12:38:16+00:00" itemprop="datePublished">
         
-        Dec 3, 2017
+        Dec 4, 2017
       </time>
       </p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>首先是一些密码学的基础概念，之后不再赘述：</p>
-<ol>
-  <li>
-    <p><code class="highlighter-rouge">密钥(key)</code>：在密码学中密钥可以被当做一个加密或者解密的参数，当执行加密或者解密过程中会同密文(Cipher)或者明文(Message)一起输入到加密或者解密方程，从而达成目的。没有密钥是无法完成解密和加密过程，密钥分为两种：Secret Key 和 Public Key。</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">加密和解密</code></p>
-  </li>
-</ol>
+    <p>这一篇我们要讲一些关于网络安全的种种，和上一篇一样，先讲述一下关于 <code class="highlighter-rouge">Computer networking</code> 的一些基础知识。</p>
 
-<p>首先介绍一下<code class="highlighter-rouge">对称加密(Symmetric Encryption)</code>,这是最基础和最简单的一种加密模式。<code class="highlighter-rouge">对称加密</code>意味着加密和解密双方使用了相同的密钥来进行加密和解密</p>
+<p><strong>URL—最基础的诈骗</strong></p>
 
-<p>首先介绍一下<code class="highlighter-rouge">流加密(Stream Cipher)</code>，<code class="highlighter-rouge">流加密</code>是一种加密算法，加密和解密运用相同的伪随机加密流作为密钥。</p>
+<p>URL 的全名叫做(Uniform Resource Locators)， it is a standardized format for describing the location and access method of resources via the internet.</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span></code></pre></figure>
+<p>我们常见的URL格式是这样的:</p>
 
-<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>
+<p><code class="highlighter-rouge">&lt;scheme&gt;://&lt;user&gt;:&lt;password&gt;@&lt;host&gt;:&lt;port&gt;/&lt;url-path&gt;?&lt;query-string&gt;</code></p>
+
+<p>举个例子:
+<a href="https://profile.facebook.com">https://profile.facebook.com</a></p>
+
+<p>在这里https就是运行的协议（超文本传输协议）; 没有用户和密码信息，注意这里指的用户和密码并不是指我们facebook用户的用户名和密码，而是facebook服务器管理员登陆facebook服务器来对网页进行维护时使用的用户名和密码; host 是profile.facebook.com，在这里com指的是商业网站（commercial），facebook指的是网站名称，而profile指的是facebook的一个分支服务器的名称； emmmm这个例子是很久之前的了，facebook好像已经修改了他们的网站结构。接下来是一个典型URL诈骗的例子：</p>
+
+<p><code class="highlighter-rouge">http://taobao.alibab.com</code></p>
+
+<p>（注意这个域名是无效的，但是不要去访问这个域名以防被不法人员注册），我们可以看到他的host为<code class="highlighter-rouge">taobao.alibab.com</code>,从后往前分析，商业网站(com)，网站名称(alibab)，子域名(taobao)，不注意的话很难发现他与真正URL的区别，运用这个网站，入侵者就可以执行一系列web入侵。</p>
+
+<p>Anyway，举这个例子的目的就是以后大家不要被假冒的URL欺骗了！！！在访问网站之前一定要留心看一眼URL地址是不是对的</p>
+
+<p><strong>DNS—最常见的网络攻击</strong></p>
+
+<p>网络上我们平时所说的网页地址都是域名地址，在真实的网络之中区分设备的唯一地址就是IP地址。因此在网络中就有了一系列对域名和IP地址进行解析的服务器—DNS服务器。而针对DNS服务的种种攻击可以造成目标断网等等。</p>
+
+<p>首先举一个2012年叙利亚断网事件的例子：</p>
 
 
   </div>
