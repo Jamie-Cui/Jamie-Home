@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-12-04T19:53:15+00:00</updated><id>/</id><title type="html">Welcom to Jamie’s Home</title><subtitle>Student ... of Computer Security(?)</subtitle><entry><title type="html">Network Security</title><link href="/jekyll/update/2017/12/04/networking.html" rel="alternate" type="text/html" title="Network Security" /><published>2017-12-04T12:38:16+00:00</published><updated>2017-12-04T12:38:16+00:00</updated><id>/jekyll/update/2017/12/04/networking</id><content type="html" xml:base="/jekyll/update/2017/12/04/networking.html">&lt;p&gt;这一篇我们要讲一些关于网络安全的种种，和上一篇一样，先讲述一下关于 &lt;code class=&quot;highlighter-rouge&quot;&gt;Computer networking&lt;/code&gt; 的一些基础知识。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="https://jamie2cui.github.io/Jamie-Home/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jamie2cui.github.io/Jamie-Home/" rel="alternate" type="text/html" /><updated>2017-12-04T19:58:48+00:00</updated><id>https://jamie2cui.github.io/Jamie-Home/</id><title type="html">Welcom to Jamie’s Home</title><subtitle>Student ... of Computer Security(?)</subtitle><entry><title type="html">Network Security</title><link href="https://jamie2cui.github.io/Jamie-Home/jekyll/update/2017/12/04/networking.html" rel="alternate" type="text/html" title="Network Security" /><published>2017-12-04T12:38:16+00:00</published><updated>2017-12-04T12:38:16+00:00</updated><id>https://jamie2cui.github.io/Jamie-Home/jekyll/update/2017/12/04/networking</id><content type="html" xml:base="https://jamie2cui.github.io/Jamie-Home/jekyll/update/2017/12/04/networking.html">&lt;p&gt;这一篇我们要讲一些关于网络安全的种种，和上一篇一样，先讲述一下关于 &lt;code class=&quot;highlighter-rouge&quot;&gt;Computer networking&lt;/code&gt; 的一些基础知识。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;URL—最基础的诈骗&lt;/strong&gt;&lt;/p&gt;
 
@@ -23,7 +23,7 @@
 
 &lt;p&gt;网络上我们平时所说的网页地址都是域名地址，在真实的网络之中区分设备的唯一地址就是IP地址。因此在网络中就有了一系列对域名和IP地址进行解析的服务器—DNS服务器。而针对DNS服务的种种攻击可以造成目标断网等等。&lt;/p&gt;
 
-&lt;p&gt;首先举一个2012年叙利亚断网事件的例子：&lt;/p&gt;</content><author><name></name></author><summary type="html">这一篇我们要讲一些关于网络安全的种种，和上一篇一样，先讲述一下关于 Computer networking 的一些基础知识。</summary></entry><entry><title type="html">Security Definition</title><link href="/jekyll/update/2017/12/03/security.html" rel="alternate" type="text/html" title="Security Definition" /><published>2017-12-03T20:40:00+00:00</published><updated>2017-12-03T20:40:00+00:00</updated><id>/jekyll/update/2017/12/03/security</id><content type="html" xml:base="/jekyll/update/2017/12/03/security.html">&lt;p&gt;这篇 post 会讲述一下什么是&lt;code class=&quot;highlighter-rouge&quot;&gt;计算机安全&lt;/code&gt;，我们普通人或者一般技术人员应该怎样做到保证自己的安全。请留意下面的一些定义可能会用英文来表述，因为在某些情况下英文表述要优于中文表述。&lt;/p&gt;
+&lt;p&gt;首先举一个2012年叙利亚断网事件的例子：&lt;/p&gt;</content><author><name></name></author><summary type="html">这一篇我们要讲一些关于网络安全的种种，和上一篇一样，先讲述一下关于 Computer networking 的一些基础知识。</summary></entry><entry><title type="html">Security Definition</title><link href="https://jamie2cui.github.io/Jamie-Home/jekyll/update/2017/12/03/security.html" rel="alternate" type="text/html" title="Security Definition" /><published>2017-12-03T20:40:00+00:00</published><updated>2017-12-03T20:40:00+00:00</updated><id>https://jamie2cui.github.io/Jamie-Home/jekyll/update/2017/12/03/security</id><content type="html" xml:base="https://jamie2cui.github.io/Jamie-Home/jekyll/update/2017/12/03/security.html">&lt;p&gt;这篇 post 会讲述一下什么是&lt;code class=&quot;highlighter-rouge&quot;&gt;计算机安全&lt;/code&gt;，我们普通人或者一般技术人员应该怎样做到保证自己的安全。请留意下面的一些定义可能会用英文来表述，因为在某些情况下英文表述要优于中文表述。&lt;/p&gt;
 
 &lt;p&gt;首先就是安全包含哪些方面：&lt;/p&gt;
 &lt;ol&gt;
@@ -41,7 +41,7 @@
 &lt;p&gt;&lt;strong&gt;安全设置 (Security Configuration)&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;引用 &lt;em&gt;Verizon 2015 Data Breach Investigations Report&lt;/em&gt;，大多数网络安全隐患都是来源于网络管理员使用了不恰当的防护设置，如默认密码，默认帐号没修改、删除，或者某些自启动（并且不安全）的软件没有被关闭，防火墙忘记打开等等。因此我们需要注意在设置防火墙的时候不仅要设置ACCEPT我们需要的连接，也要DROPk所有未经允许的连接。
-&lt;img src=&quot;/asset/1.png&quot; alt=&quot;Drawing&quot; style=&quot;width: 600px;&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;https://jamie2cui.github.io/asset/1.png&quot; alt=&quot;Drawing&quot; style=&quot;width: 600px;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;网关控制 (Boundary firewall and internet gateways)&lt;/strong&gt;&lt;/p&gt;
 
