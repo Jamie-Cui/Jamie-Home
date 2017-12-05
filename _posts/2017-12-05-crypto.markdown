@@ -1,0 +1,29 @@
+---
+layout: post
+title:  "Cryptography"
+date:   2017-12-05 12:00:00 +0000
+categories: jekyll update
+---
+# **密码学基础**
+
+**密钥(key)**：在密码学中密钥可以被当做一个加密或者解密的参数，当执行加密或者解密过程中会同密文(Cipher)或者明文(Message)一起输入到加密或者解密方程，从而达成目的。没有密钥是无法完成解密和加密过程，密钥分为两种：Secret Key 和 Public Key。
+
+**加密(Encryption)和解密(Decryption)**：加密就是利用公钥和明文来生成密文的过程，而解密是加密的反过程，是利用密文和私钥来还原明文的过程。加密和解密过程涵盖了整个密码学最基础的部分，而加密方程和解密方程还有传输模式是密码学主要考虑的问题。
+
+**对称加密(Symmetric Encryption)**：加密和解密双方使用了相同的密钥来进行加密和解密，也就是密钥和私钥相同。
+
+**非对称加密(Asymmetric Encryption)**：加密和解密双方使用了不同的密钥来进行加密和解密
+
+# **流加密(Stream Ciphers)**
+
+流加密是密码学的第一课，因为流加密使用了对称加密算法
+
+
+{% highlight ruby %}
+def print_hi(name)
+  puts "Hi, #{name}"
+end
+print_hi('Tom')
+#=> prints 'Hi, Tom' to STDOUT.
+{% endhighlight %}
+

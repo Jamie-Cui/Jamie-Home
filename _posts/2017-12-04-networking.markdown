@@ -66,10 +66,31 @@ Anyway，举这个例子的目的就是以后大家不要被假冒的URL欺骗�
 
 **SYN Flooding**
 
-据统计，在所有黑客攻击事件中，SYN攻击是最常见又最容易被利用的一种攻击手法。相信很多人还记得2000年YAHOO网站遭受的攻击事例，当时黑客利用的就是简单而有效的SYN攻击，有些网络蠕虫病毒配合SYN攻击造成更大的破坏。本文介绍SYN攻击的基本原理、工具及检测方法，并全面探讨SYN攻击防范技术。[百度百科][syn-flooding-baidu]
+据统计，在所有黑客攻击事件中，SYN攻击是最常见又最容易被利用的一种攻击手法。相信很多人还记得2000年YAHOO网站遭受的攻击事例，当时黑客利用的就是简单而有效的SYN攻击，有些网络蠕虫病毒配合SYN攻击造成更大的破坏。这里给出一个百度百科的介绍链接： [百度百科][syn-flooding-baidu] 
 
+具体一点的介绍可以看下面这张图，在这张图中入侵者 (Attacker) 控制自己的电脑想目标服务器 (Target) 不间断的发送SYN数据包用来请求与目标服务器的TCP连接，而在受到目标服务器返回的 SYN,ACK 包之后主动Drop掉，以此来事目标服务器一直处在接受 SYN， 发送 SYN，ACK，等待进一步连接的状态，因此会占用许多目标服务器端口，如果端口被塞满，也就是堵塞后， 就达到了断网的目的。
 
-<img src="{{site.url}}{{site.baseurl}}/img/Dos.png" alt="Drawing" style="width: 600px;"/>  
+<img src="{{site.url}}{{site.baseurl}}/img/SYNFlooding.png" alt="Drawing" style="width: 450px;"/>  
+
+但是这种简单攻击方法是有缺陷的，首先入侵者使用的是自己的电脑进行攻击，也就是说目标受到的TCP包中含有入侵者的ip地址，所以说对于目标很容易去设置一个防火墙断绝和“嫌疑”IP的连接，（甚至更进一步目标网络管理员可以锁定入侵者的大概位置）;在者，服务器的网络带宽一般情况下远远大于个人网络，因此想要让目标网络中充斥着入侵者的ip地址入侵者必须找到很合适的网络接口。（现实中很难做到）
+
+**Spoofing: Forged TCP Packets**
+
+和SYN洪流攻击原理相同，但是应用了一个小技巧“转嫁”，也就是甩锅。入侵者通过修改自己发送的SYN包将自己“伪装”成目标服务器，然后不间断向另外一个或者几十个服务器请求TCP连接，然后另外的服务器会“忠实的”回复SYN,ACK给目标服务器，以此来达到SYN洪流攻击的目的。下图很好解释了这种攻击，和上面图片一起食用效果更佳。
+
+<img src="{{site.url}}{{site.baseurl}}/img/Spoofing.png" alt="Drawing" style="width: 600px;"/>
+
+但是这种攻击也有缺陷，比如我们想入侵一个公司的内网某个服务器，但是该服务器的防火墙会强制忽略所有来自于外界ip的请求（我们取的Random Server一般不能正好是那个公司内网的服务器），那我们应该怎么办？看下一小节。
+
+**Smurfing: Directed Broadcast**
+
+在这个例子里面我们要使用ICMP包，也就是我们常见的ping命令来实施攻击。冒充攻击电脑向局域网内所有ip发送ping命令，这样就可以使局域网内所有ip回复目标电脑从而实施攻击。
+
+<img src="{{site.url}}{{site.baseurl}}/img/Smurfing.png" alt="Drawing" style="width: 600px;"/>
+
+**Wireshark**
+
+很好用的一个网络流量分析工具，学习使用很重要。
 
 [CloudFlare]:https://blog.cloudflare.com/how-syria-turned-off-the-internet/
 [Egypt-cutoff]:https://blog.cloudflare.com/what-egypt-shutting-down-the-internet-looks-l/
