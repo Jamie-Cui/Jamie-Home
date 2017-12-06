@@ -60,7 +60,7 @@ Anyway，举这个例子的目的就是以后大家不要被假冒的URL欺骗�
 
 接下来就到了我们的明星“Dos”攻击，相信即使没有学习过计算机安全甚至没有学过计算机的人也多少有所耳闻这种攻击。Dos全名为拒绝服务攻击(Denial of Service)。
 
-"Denial of service is typically accomplished by flooding the targeted machine or resource with superfluous requests in an attempt to overload systems and prevent some or all legitimate requests from being fulfilled"  ------  "Understanding Denial-of-Service Attacks". US-CERT. 6 February 2013. Retrieved 26 May 2016."
+> "Denial of service is typically accomplished by flooding the targeted machine or resource with superfluous requests in an attempt to overload systems and prevent some or all legitimate requests from being fulfilled"  ------  "Understanding Denial-of-Service Attacks". US-CERT. 6 February 2013. Retrieved 26 May 2016."
 
 因此Dos攻击的方式是通过向目标网络中注入大量无用的重复信息导致目标网络阻塞，进而瘫痪来达到断网的目的。常见的Dos攻击分为一下几类：SYN Flooding, Spoofing and Smurfing（真的不知道中文怎么翻译）。
 
