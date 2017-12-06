@@ -44,7 +44,7 @@ categories: jekyll update
 <img src="http://chart.googleapis.com/chart?cht=tx&chl= 2^{3} = 3" style="border:none;">  
 <img src="http://chart.googleapis.com/chart?cht=tx&chl= 2^{4} = 1" style="border:none;">
 
-我们可以看到 2 的 order 是 4，而整个组的order是 4，并且使用 2 可以生成组内的所有数。
+我们可以看到 2 的 order 是 4，而整个组的order是 4，并且使用 2 可以生成组内的所有数，所以这个组是循环组，而2是这个组的一个generator。
 
 ---
 
