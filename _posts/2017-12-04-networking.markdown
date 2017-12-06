@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Network Security"
+title:  "网络安全 --- Network Security"
 date:   2017-12-04 12:00:00 +0000
 categories: jekyll update
 ---
@@ -8,7 +8,7 @@ categories: jekyll update
 
 这一篇我们要讲一些关于网络安全的种种，和上一篇一样，先讲述一下关于 Computer networking 的一些基础知识。
 
-# **URL --- 最基础的诈骗**
+# **URL : 最基础的诈骗**
 
 URL 的全名叫做(Uniform Resource Locators)， it is a standardized format for describing the location and access method of resources via the internet.
 
@@ -27,7 +27,7 @@ URL 的全名叫做(Uniform Resource Locators)， it is a standardized format fo
 
 Anyway，举这个例子的目的就是以后大家不要被假冒的URL欺骗了！！！在访问网站之前一定要留心看一眼URL地址是不是对的
 
-# **DNS --- 最常见的网络攻击**
+# **DNS : 最常见的网络攻击**
 
 网络上我们平时所说的网页地址都是域名地址，在真实的网络之中区分设备的唯一地址就是IP地址。因此在网络中就有了一系列对域名和IP地址进行解析的服务器---DNS服务器。而针对DNS服务的种种攻击可以造成目标断网等等。
 
@@ -56,7 +56,7 @@ Anyway，举这个例子的目的就是以后大家不要被假冒的URL欺骗�
 
 <img src="{{site.url}}{{site.baseurl}}/img/man-in-the-middle.png" alt="Drawing" style="width: 600px;"/>    
 
-# **Dos --- 最“著名”的攻击**
+# **Dos : 最“著名”的攻击**
 
 接下来就到了我们的明星“Dos”攻击，相信即使没有学习过计算机安全甚至没有学过计算机的人也多少有所耳闻这种攻击。Dos全名为拒绝服务攻击(Denial of Service)。
 
