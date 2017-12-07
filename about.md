@@ -3,6 +3,8 @@ layout: page
 title: About
 permalink: /about/
 ---
+{% include 123.html %}
+
 # JINMING CUI
 
 Student of Computer Science, Informatics School, University of Edinburgh. He accomplished his undergraduate study in telecommunications with management, International School, Beijing University of Posts and Telecommunications. 
