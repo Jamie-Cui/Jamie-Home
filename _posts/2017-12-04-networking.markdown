@@ -11,7 +11,7 @@ categories: jekyll update
    views: <span id="busuanzi_value_page_pv"></span>
 </span>
 
-这一篇我们要讲一些关于网络安全的种种，和上一篇一样，先讲述一下关于 Computer networking 的一些基础知识。
+这一篇我们要讲一些关于网络安全的种种，和上一篇一样，先讲述一下关于 Computer networking 的一些基础知识，和一些常用的攻击手段。
 
 # **URL : 最基础的诈骗**
 
@@ -93,7 +93,15 @@ Anyway，举这个例子的目的就是以后大家不要被假冒的URL欺骗�
 
 <img src="{{site.url}}{{site.baseurl}}/img/Smurfing.png" alt="Drawing" style="width: 600px;"/>
 
-**Wireshark**
+# **重放攻击 Replay attack**
+
+[[内容来源于百度百科][replay-attack]]
+
+> 重放攻击(Replay Attacks)又称重播攻击、回放攻击，是指攻击者发送一个目的主机已接收过的包，来达到欺骗系统的目的，主要用于身份认证过程，破坏认证的正确性。重放攻击可以由发起者，也可以由拦截并重发该数据的敌方进行。攻击者利用网络监听或者其他方式盗取认证凭据，之后再把它重新发给认证服务器。重放攻击在任何网络通过程中都可能发生，是计算机世界黑客常用的攻击方式之一。
+
+重放攻击的基本原理就是把以前窃听到的数据原封不动地重新发送给接收方。很多时候，网络上传输的数据是加密过的，此时窃听者无法得到数据的准确意义。但如果他知道这些数据的作用，就可以在不知道数据内容的情况下通过再次发送这些数据达到愚弄接收端的目的。例如，有的系统会将鉴别信息进行简单加密后进行传输，这时攻击者虽然无法窃听密码，但他们却可以首先截取加密后的口令然后将其重放，从而利用这种方式进行有效的攻击。再比如，假设网上存款系统中，一条消息表示用户支取了一笔存款，攻击者完全可以多次发送这条消息而偷窃存款。
+
+# **网络流量分析工具 Wireshark**
 
 很好用的一个网络流量分析工具，学习使用很重要。
 
@@ -102,3 +110,4 @@ Anyway，举这个例子的目的就是以后大家不要被假冒的URL欺骗�
 [facebook-profile]:https://profile.facebook.com
 [fake-url]:http://taobao.alibab.com
 [syn-flooding-baidu]:https://baike.baidu.com/item/SYN%E6%94%BB%E5%87%BB/14762413?fr=aladdin
+[replay-attack]:https://baike.baidu.com/item/%E9%87%8D%E6%94%BE%E6%94%BB%E5%87%BB/2229240?fr=aladdin

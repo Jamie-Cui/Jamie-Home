@@ -70,7 +70,7 @@ Node 5 发送出去的加密信息为：
 * `exp_time`：包的有效期，包的有效期到了之后node会drop掉这个包
 * `next_hop`：下一个节点的信息
 * `(Ff,Kfz)`：存储了下一个节点的Forward message 和下一个节点的 public key
-* `(Fb,Kby)`：存储了上一个节点恶毒Forward message 和上一个节点的 public key
+* `(Fb,Kby)`：存储了上一个节点的Forward message 和上一个节点的 public key
 
 下面这张图具体解释了 X -> Y -> Z 是如何向下一个节点传递包的。首先因为X是第一个节点，所以X知道所有节点的信息，因此在利用Y和Z的public key对原明文信息message进行加密的时候，向每一层填入了上一个节点和下一个节点的信息（因为通信不是一次性单向的而是多次双向的通信）。这样就保证了整条通信线路的完整性和保密性（上一个节点下一个节点的信息都是通过该节点的public key进行加密过的）。
 
@@ -80,10 +80,27 @@ Node 5 发送出去的加密信息为：
 
 该信息每经过一个节点都可以解密一层，因为只有对应的secret key才可以解密，所以就保证了只有这个节点才可以解密，每次解密后的传播会使传播的包想洋葱一样脱掉一层“外皮”（实际上是加密层），这就是“洋葱网络”的由来。
 
-# **创建通信流**
+# **安全性分析**
+
+**被动攻击者**
+
+如果我们假设**入侵者拥有足够多的匿名网络分析样本**，也就是说入侵者长时间嗅探所有网络流量。再次假设两个匿名双方通过匿名网络只发送简单的信息，如：yes/no，那么经过入侵者对网络包模式分析之后有很大几率可以猜出通信的双方到底是谁。再者，洋葱网络具有实时性的性质，入侵者如果观测网络中各个设备端口的开闭情况，那么很大几率上同时打开的两个端口正在通信，根据此信息就可推导出routing信息。
+
+**主动攻击者**
+
+我们现在知道整条线路的信息其实都存在Node 1中，如果**Node1被入侵**也就是通信发起者连接洋葱网络的代理服务器被入侵，那就证明洋葱网络失去了安全性，所有的routing信息都会泄露。但是除此之外只要有一个“诚实”的节点我们就可以保证通信的私密性，因为只要有一个节点进行解密加密就无法了解到后面的节点（除非猜出来）。
+
+`Expire-time是为了抵御重放攻击`关于重放攻击可以看之前的这篇博客[网络安全 --- Network Seecurity][post-networking]，但是这样会使整个网络易受到DDos攻击，如果expire time设置很短，入侵者就可以无限制向某一个节点发送数据然后快速Drop掉数据包（expire time到了重新发送数据包），但是如果time很长，就使每个节点记录了更多的信息（不安全）。
+
+**Node5被入侵** 和node1被入侵相同
+
+
+
+
 
 
 
 [Hiding-routing-information]:https://link-springer-com.ezproxy.is.ed.ac.uk/chapter/10.1007/3-540-61996-8_37
 [OSI]:https://baike.baidu.com/item/OSI/5520?fr=aladdin
 [Chaum]:https://dl-acm-org.ezproxy.is.ed.ac.uk/citation.cfm?doid=358549.358563s
+[post-networking]:{{site.url}}{{site.baseurl}}/jekyll/update/2017/12/04/networking.html
