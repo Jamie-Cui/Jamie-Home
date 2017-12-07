@@ -3,7 +3,7 @@ layout: page
 title: About
 permalink: /about/
 ---
-{% include 123.html %}
+{% include add_favicon.html %}
 
 # JINMING CUI
 

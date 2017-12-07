@@ -4,7 +4,8 @@ title:  "密码学协议 --- Cryptography Protocols"
 date:   2017-12-05 12:00:00 +0000
 categories: jekyll update
 ---
-{% include 123.html %}
+{% include add_favicon.html %}
+{% include add_views.html %}
 
 # **流加密(Stream Ciphers)**
 
@@ -34,3 +35,9 @@ OTP是流加密中最简单也是最经典的一种，假设我们现在有一�
     <img src="{{site.url}}{{site.baseurl}}/img/OTP_attack.png" alt="Drawing" style="width: 600px;"/>
 
 # **RC4**
+
+RC4协议是在1987年被Ron Rivest发明的[介绍点这里][RC4]，RC4的全称为(Ron Cipher 4)人家有命名资格呵呵，而且Ron大佬还是著名顶顶RSA项目组中的头号人物，RSA是个常用的加密算法会在后面提到。 RC4包括两部分，初始化和密钥生成。
+
+在初始化阶段会声明一个长度为2048比特也就是256字节的一个数组然后将数组顺序打乱。
+
+[RC4]:https://www.vocal.com/cryptography/rc4-encryption-algoritm/

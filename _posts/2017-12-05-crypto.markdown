@@ -4,7 +4,8 @@ title:  "密码学 --- Cryptography"
 date:   2017-12-05 12:00:00 +0000
 categories: jekyll update
 ---
-{% include 123.html %}
+{% include add_favicon.html %}
+{% include add_views.html %}
 
 # **密码学基础1：概念**
 

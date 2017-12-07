@@ -4,7 +4,8 @@ title:  "网络安全 --- Network Security"
 date:   2017-12-04 12:00:00 +0000
 categories: jekyll update
 ---
-{% include 123.html %}
+{% include add_favicon.html %}
+{% include add_views.html %}
 
 这一篇我们要讲一些关于网络安全的种种，和上一篇一样，先讲述一下关于 Computer networking 的一些基础知识。
 
