@@ -50,22 +50,12 @@ categories: jekyll update
 
 ---
 
+# **密码学基础3：概率论**
 
-# **流加密(Stream Ciphers)**
+**完美的保密(Perfect Secrecy)**
 
-流加密是密码学的第一课，因为流加密使用了对称加密算法,所以相应的加密解密方程比较好理解。
+完美保密的数学定义如下，简单的用语言来概括就是任意取两个message用相同的key进行加密，生成的密文相同的概率相同。
 
-**One-Time-Pad (OTP)**
-
-
-
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+<img src="{{site.url}}{{site.baseurl}}/img/PerfectSecrecy.png" alt="Drawing" style="width: 400px;"/>
 
 [google-chart]:https://developers.google.com/chart/
