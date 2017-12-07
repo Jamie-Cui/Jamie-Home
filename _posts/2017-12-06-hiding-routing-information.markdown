@@ -4,6 +4,8 @@ title:  "洋葱路由的起点 --- Hiding Routing Information"
 date:   2017-12-06 12:00:00 +0000
 categories: jekyll update
 ---
+{% include 123.html %}
+
 这篇post我们会提及一下洋葱路由的发展过程，尤其是在刚提出匿名网络时洋葱网络的初始化设计方案。
 这篇post是基于这篇论文：[Hiding routing information (Goldschlag, D.M. ; Reed, M.G. ; Syverson, P.F.)][Hiding-routing-information]
 
