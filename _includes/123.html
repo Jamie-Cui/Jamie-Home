@@ -1,12 +1,18 @@
 <script type="text/javascript">
              
     var changeIcon = function(){    
+        // var link = document.createElement("link");
+        // link.href = "/favicon.ico";
+        // link.rel = "shortcut icon";
+        // document.head.appendChild(link);
         var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
         link.type = 'image/x-icon';
         link.rel = 'shortcut icon';
-        link.href = '/favicon.ico';
+        link.href = 'http://www.stackoverflow.com/favicon.ico';
         document.getElementsByTagName('head')[0].appendChild(link);
     };
+
+
 
     changeIcon();
 
