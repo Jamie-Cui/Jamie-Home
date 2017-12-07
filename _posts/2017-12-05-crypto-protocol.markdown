@@ -7,6 +7,10 @@ categories: jekyll update
 {% include add_favicon.html %}
 {% include add_views.html %}
 
+<span id="busuanzi_container_page_pv">
+   views: <span id="busuanzi_value_page_pv"></span>
+</span>
+
 # **流加密(Stream Ciphers)**
 
 流加密是密码学的第一课，因为流加密使用了对称加密算法,所以相应的加密解密方程比较好理解。

@@ -7,6 +7,10 @@ categories: jekyll update
 {% include add_favicon.html %}
 {% include add_views.html %}
 
+<span id="busuanzi_container_page_pv">
+   views: <span id="busuanzi_value_page_pv"></span>
+</span>
+
 这篇 post 会讲述一下什么是`计算机安全`，我们普通人或者一般技术人员应该怎样做到保证自己的安全。请留意下面的一些定义可能会用英文来表述，因为在某些情况下英文表述要优于中文表述。
 
 首先就是安全包含哪些方面：

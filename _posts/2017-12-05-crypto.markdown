@@ -7,6 +7,10 @@ categories: jekyll update
 {% include add_favicon.html %}
 {% include add_views.html %}
 
+<span id="busuanzi_container_page_pv">
+   views: <span id="busuanzi_value_page_pv"></span>
+</span>
+
 # **密码学基础1：概念**
 
 **密钥(key)**：在密码学中密钥可以被当做一个加密或者解密的参数，当执行加密或者解密过程中会同密文(Cipher)或者明文(Message)一起输入到加密或者解密方程，从而达成目的。没有密钥是无法完成解密和加密过程，密钥分为两种：Secret Key 和 Public Key。

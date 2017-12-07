@@ -7,6 +7,10 @@ categories: jekyll update
 {% include add_favicon.html %}
 {% include add_views.html %}
 
+<span id="busuanzi_container_page_pv">
+   views: <span id="busuanzi_value_page_pv"></span>
+</span>
+
 这一篇我们要讲一些关于网络安全的种种，和上一篇一样，先讲述一下关于 Computer networking 的一些基础知识。
 
 # **URL : 最基础的诈骗**

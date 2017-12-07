@@ -6,3 +6,7 @@ layout: home
 ---
 {% include add_favicon.html %}
 {% include add_views.html %}
+
+<span id="busuanzi_container_site_uv">
+   views: <span id="busuanzi_value_site_uv"></span>
+</span>
