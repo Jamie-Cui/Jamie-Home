@@ -1,0 +1,44 @@
+---
+layout: post
+title:  "一些笔记"
+date:   2017-12-11 12:00:00 +0000
+categories: jekyll update
+---
+{% include add_favicon.html %}
+{% include add_views.html %}
+
+开了许多新坑一没有时间去填，预计在19号写完IRR的Draft之后可以继续更新博客了。
+
+接下来会更新一系列youtube上的教学视频争取把内容可以转换成文字易于读取的形式，目前要更新的是[合理的入侵：黑客从零开始][hacker-url]（谨慎打开，需要翻墙）
+
+# **常见的定义**
+
+`黑帽`：我们日常认知的黑客 illegal
+
+`白帽`：入侵测试人员 legal
+
+`灰帽`：游走在犯法的边缘
+
+`Footprinting`: general information gathering on your target, it doesn't has to be on the digital world
+
+`Dos`: just you --- childish way
+
+`DDos`: multiple people --- difficult to fight against (physical defenses --- router firewall) not difficult to carry attack, difficult to do the preparations. --- compromise other computers to carry out ddos attack --- FUD and RAT
+
+`FUD`: fully undetectable (anti-virus cannot detect)
+
+`RAT`: remote administration tools --- email\usb to gain root on their computer, slave their computer, user has no idea what is going on with their computer, because it performs normally, everything running in the background. 
+
+`Rootkit`: installed on the OS --- hid the process from task manager --- redirect the message from task manager to itself
+
+`Fishing`: email \ url link --- today --- dns sever was changed, you are redirected to malicious website --- get confidential information
+
+`SQL Injection`: learned before
+
+`VPN` `Proxy` 
+
+`Tor` --- stay anonymous
+
+
+
+[hacker-url]:https://www.youtube.com/watch?v=vg9cNFPQFqM&list=WL
