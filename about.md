@@ -7,6 +7,8 @@ permalink: /about/
 
 # JINMING CUI
 
-Student of Computer Science, Informatics School, University of Edinburgh. He accomplished his undergraduate study in telecommunications with management, International School, Beijing University of Posts and Telecommunications. 
+Student of Computer Science, Informatics School, University of Edinburgh.
 
-His current interest is in "Blockchains Technology", "Anonymous Network" and general computer security.
+He accomplished his undergraduate study in telecommunications with management, International School, Beijing University of Posts and Telecommunications. His undergraduate final project is "Measurement study of live  video streaming infrastructure for serving live video content in China".
+
+His current interest is in "Blockchains Technology", "Anonymity System" and general computer security.
