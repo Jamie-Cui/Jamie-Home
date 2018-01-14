@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "密码学 --- Cryptography"
+title:  "密码学基础 --- Cryptography"
 date:   2017-12-05 12:00:00 +0000
 categories: jekyll update
 ---

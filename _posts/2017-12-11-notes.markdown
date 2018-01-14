@@ -1,44 +1,58 @@
 ---
 layout: post
-title:  "一些笔记"
-date:   2017-12-11 12:00:00 +0000
+title:  " 目录 + 笔记（永久置顶）"
+date:   2018-1-11 12:00:00 +0000
 categories: jekyll update
 ---
 {% include add_favicon.html %}
 {% include add_views.html %}
 
-开了许多新坑一没有时间去填，预计在19号写完IRR的Draft之后可以继续更新博客了。
+这个博客的主要目的是记录一下博主大学研究生期间所学过的知识，大多数知识属于计算机安全方向的。youtube上有一个比较完整的黑客入门视频[《合理的入侵：黑客从零开始》][hacker-url]（谨慎打开，需要翻墙）
 
-接下来会更新一系列youtube上的教学视频争取把内容可以转换成文字易于读取的形式，目前要更新的是[合理的入侵：黑客从零开始][hacker-url]（谨慎打开，需要翻墙）
+关于油管视频的问题，我会不定期在B站更新感兴趣的油管视频（催更什么的去B站留言我一定会看到的），[戳我看B站](https://space.bilibili.com/8538797/#/)，求关注求硬币哈哈哈哈哈哈
 
-# **常见的定义**
+下学期课程已经出来了，目前为止学过的知识有：
 
-`黑帽`：我们日常认知的黑客 illegal
+- [匿名系统（洋葱路由）](#%E5%8C%BF%E5%90%8D%E7%B3%BB%E7%BB%9F%EF%BC%88%E6%B4%8B%E8%91%B1%E8%B7%AF%E7%94%B1%EF%BC%89)
+- [区块链和分布式总帐](#%E5%8C%BA%E5%9D%97%E9%93%BE%E5%92%8C%E5%88%86%E5%B8%83%E5%BC%8F%E6%80%BB%E5%B8%90)
+- [计算机安全](#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AE%89%E5%85%A8)
+- [密码学](#%E5%AF%86%E7%A0%81%E5%AD%A6)
+- [安全编程](#%E5%AE%89%E5%85%A8%E7%BC%96%E7%A8%8B)
+- [物联网安全，云计算安全](#%E7%89%A9%E8%81%94%E7%BD%91%E5%AE%89%E5%85%A8%EF%BC%8C%E4%BA%91%E8%AE%A1%E7%AE%97%E5%AE%89%E5%85%A8)
 
-`白帽`：入侵测试人员 legal
+---
 
-`灰帽`：游走在犯法的边缘
+#  匿名系统（洋葱路由）
 
-`Footprinting`: general information gathering on your target, it doesn't has to be on the digital world
+1. [洋葱路由的起点]({{site.url}}{{site.baseurl}}/hiding-routing-information)
+2. [第二代洋葱路由]({{site.url}}{{site.baseurl}}/tor)
 
-`Dos`: just you --- childish way
+---
+# 区块链和分布式总帐
 
-`DDos`: multiple people --- difficult to fight against (physical defenses --- router firewall) not difficult to carry attack, difficult to do the preparations. --- compromise other computers to carry out ddos attack --- FUD and RAT
+关于区块链和比特币的问题，可以看一下普林斯顿大学的免费公开课视频，之后也会根据这个视频和上课所学内容进行一步一步的更新，链接放在这里[《普林斯顿大学公开课：比特币技术》](https://www.youtube.com/channel/UCNcSSleedtfyDuhBvOQzFzQ)
 
-`FUD`: fully undetectable (anti-virus cannot detect)
+---
 
-`RAT`: remote administration tools --- email\usb to gain root on their computer, slave their computer, user has no idea what is going on with their computer, because it performs normally, everything running in the background. 
+# 计算机安全
 
-`Rootkit`: installed on the OS --- hid the process from task manager --- redirect the message from task manager to itself
+1. [安全的定义]({{site.url}}{{site.baseurl}}//security)
+2. [网络安全]({{site.url}}{{site.baseurl}}/networking)
 
-`Fishing`: email \ url link --- today --- dns sever was changed, you are redirected to malicious website --- get confidential information
+---
 
-`SQL Injection`: learned before
+# 密码学
 
-`VPN` `Proxy` 
+1. [密码学基础]({{site.url}}{{site.baseurl}}/crypto)
+2. [密码学协议]({{site.url}}{{site.baseurl}}/crypto-protocol)
 
-`Tor` --- stay anonymous
+---
 
+# 安全编程
+
+---
+
+# 物联网安全，云计算安全
 
 
 [hacker-url]:https://www.youtube.com/watch?v=vg9cNFPQFqM&list=WL
