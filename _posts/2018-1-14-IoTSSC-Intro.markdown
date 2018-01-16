@@ -32,3 +32,5 @@ It's the common Internet of things platform that brings us diverse information t
 
 信息来源与流程 device sensors -> IoT platform -> analysis & organize data -> apps / manufacture factories / other related parties
 
+IoT设备的作用是收集数据或者将数据转化成有用的信息(data->information)
+
