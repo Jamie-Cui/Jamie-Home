@@ -1,7 +1,7 @@
 ---
 layout: page
 title:  " 目录（永久置顶）"
-date:   2018-1-15 13:00:00 +0000
+date:   2018-1-17 13:00:00 +0000
 categories: jekyll update
 ---
 {% include add_favicon.html %}
@@ -45,8 +45,8 @@ categories: jekyll update
 
 # 计算机安全
 
-1. [安全的定义]({{site.url}}{{site.baseurl}}//security)
-2. [网络安全]({{site.url}}{{site.baseurl}}/networking)
+1. [安全的定义]({{site.url}}{{site.baseurl}}/cs-intro)
+2. [网络安全]({{site.url}}{{site.baseurl}}/cs-network)
 
 ---
 
