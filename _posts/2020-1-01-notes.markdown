@@ -1,7 +1,7 @@
 ---
 layout: page
 title:  " 目录（永久置顶）"
-date:   2018-1-17 13:00:00 +0000
+date:   2018-1-19 13:00:00 +0000
 categories: jekyll update
 ---
 {% include add_favicon.html %}
@@ -23,43 +23,32 @@ categories: jekyll update
 - [Ubuntu备忘录](#ubuntu%E5%A4%87%E5%BF%98%E5%BD%95)
 
 
----
-
 # 现实案例
 
 1. [心脏出血漏洞]({{site.url}}{{site.baseurl}}/heartbleed)
-
----
 
 #  匿名系统（洋葱路由）
 
 1. [洋葱路由的起点]({{site.url}}{{site.baseurl}}/hiding-routing-information)
 2. [第二代洋葱路由]({{site.url}}{{site.baseurl}}/tor)
 
----
 # 区块链和分布式总帐
 
 关于区块链和比特币的问题，可以看一下普林斯顿大学的免费公开课视频，之后也会根据这个视频和上课所学内容进行一步一步的更新，链接放在这里[《普林斯顿大学公开课：比特币技术》](https://www.youtube.com/channel/UCNcSSleedtfyDuhBvOQzFzQ)
 
----
+1. [入门第一课 --- Intro]({{site.url}}{{site.baseurl}}/bdl-intro)
 
 # 计算机安全
 
 1. [安全的定义]({{site.url}}{{site.baseurl}}/cs-intro)
 2. [网络安全]({{site.url}}{{site.baseurl}}/cs-network)
 
----
-
 # 密码学
 
 1. [密码学基础]({{site.url}}{{site.baseurl}}/crypto)
 2. [密码学协议]({{site.url}}{{site.baseurl}}/crypto-protocol)
 
----
-
 # 安全编程
-
----
 
 # 物联网安全，云计算安全
 

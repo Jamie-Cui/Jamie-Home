@@ -7,6 +7,10 @@ categories: jekyll update
 {% include add_favicon.html %}
 {% include add_views.html %}
 
+<span id="busuanzi_container_page_pv">
+   views: <span id="busuanzi_value_page_pv"></span>
+</span>
+
 首先不说废话的放几个视频链接，这门课老师要求每周上课前都要看完将近一个小时的视频，大多数都是youtube上的视频，两个小时的课程包括一个小时的对视频的讨论还有正式的一个小时的上课内容。
 
 先放上introduction视频的链接：
