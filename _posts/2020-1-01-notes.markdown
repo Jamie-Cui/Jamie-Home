@@ -1,7 +1,7 @@
 ---
 layout: page
 title:  " 目录（永久置顶）"
-date:   2018-1-19 13:00:00 +0000
+date:   2018-1-27 13:00:00 +0000
 categories: jekyll update
 ---
 {% include add_favicon.html %}
@@ -19,7 +19,7 @@ categories: jekyll update
 - [计算机安全](#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AE%89%E5%85%A8)
 - [密码学](#%E5%AF%86%E7%A0%81%E5%AD%A6)
 - [安全编程](#%E5%AE%89%E5%85%A8%E7%BC%96%E7%A8%8B)
-- [物联网安全，云计算安全](#%E7%89%A9%E8%81%94%E7%BD%91%E5%AE%89%E5%85%A8%EF%BC%8C%E4%BA%91%E8%AE%A1%E7%AE%97%E5%AE%89%E5%85%A8)
+- [软件测试](#%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95)
 - [Ubuntu备忘录](#ubuntu%E5%A4%87%E5%BF%98%E5%BD%95)
 
 
@@ -50,9 +50,9 @@ categories: jekyll update
 
 # 安全编程
 
-# 物联网安全，云计算安全
+# 软件测试
 
-1. [介绍]({{site.url}}{{site.baseurl}}/IoTSSC-Intro)
+1. [功能测试]({{site.url}}{{site.baseurl}}/st-functional-testing)
 
 # Ubuntu备忘录
 
