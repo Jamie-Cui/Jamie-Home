@@ -89,6 +89,10 @@ git checkout mlp2017-8/semester_2_materials
 
 ESC之后`:wq`保存文件，然后运行
 
-`bash gpu_cluster_tutorial_training_script.sh`
+`sbatch gpu_cluster_tutorial_training_script.sh`
 
 之后我们就可以使用`squeue`来查看自己的任务进程了
+
+<img src="{{site.url}}{{site.baseurl}}/img/5.png" alt="Drawing" style="width: 700px;"/>
+
+如果有错误可以在目录下面的sample_error里面观看
