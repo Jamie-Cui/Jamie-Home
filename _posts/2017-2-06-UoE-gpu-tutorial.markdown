@@ -79,6 +79,10 @@ cd mlpractical
 git checkout mlp2017-8/semester_2_materials
 ```
 
+安装requirements
+
+`pip install requirements_gpu.txt`
+
 接下来我们要修改一个脚本文件
 
 `vim gpu_cluster_tutorial_training_script.sh`
