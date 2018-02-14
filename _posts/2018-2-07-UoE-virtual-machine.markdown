@@ -19,6 +19,7 @@ Using your favorite terminal to connect with dice
 `sftp s17*****@student.ssh.inf.ed.ac.uk`
 
 and input your password.
+
 Enter the ova file path
 
 `cd /afc/inf.ed.ac.uk/group/teaching/module-sp`
