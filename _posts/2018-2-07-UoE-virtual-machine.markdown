@@ -14,21 +14,21 @@ categories: jekyll update
 
 This tutorial works only on machine with `sftp` installed. (Secure File Transmission Protocol)
 
-1. Using your favorite terminal to connect with dice
+Using your favorite terminal to connect with dice
 
 `sftp s17*****@student.ssh.inf.ed.ac.uk`
 
 and input your password.
-2. Enter the ova file path
+Enter the ova file path
 
 `cd /afc/inf.ed.ac.uk/group/teaching/module-sp`
 
-3. Download the ova file
+Download the ova file
 
 `get SecureProgramming-Coursework.ova`
 
-4. Exit sftp
+Exit sftp
 
 `exit`
 
-5. Open virtual box on your own machine, import appliance and enjoy!
+Open virtual box on your own machine, import appliance and enjoy!
