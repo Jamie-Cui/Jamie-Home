@@ -4,7 +4,7 @@ email: jamie.cui@outlook.com
 description: >- 
   Student of Computer Science, Informatics school, University of Edinburgh
 baseurl: "/Jamie-Home"
-url: "https://jamie2cui.github.io" 
+url: "https://jamie-cui.github.io" 
 
 github_username:  Jamie2Cui
 permalink: /:title.html

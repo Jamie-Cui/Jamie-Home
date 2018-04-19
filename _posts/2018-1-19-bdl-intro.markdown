@@ -19,12 +19,47 @@ categories: jekyll update
 
 目前，人们正在利用这一共享价值体系，在各行各业开发去中心化电脑程序(Decentralized applications, Dapp)，在全球各地构建去中心化自主组织和去中心化自主社区(Decentralized autonomous society, DAS)
 
+**分布式总帐** (Distributedd Legers)：
+> Distributed Ledger is a consensus of replicated, shared, and synchronized digital data geographically spread across multiple sites, countries, or institutions
+
+我们只需要了解到分布式总帐不止存在于区块链中，分布式总帐也具有别的形式。
 
 # 货币
 
 什么是货币？货币毋庸置疑是日常生活不可或缺的一部分，在1874年一个人可以用一只鸡来换一年的报纸订阅。这项交易成立的条件是交易双方均认为一只鸡的在1874年的价值和一年报纸订阅的价值相同，双方建立了共识（consensus）机制来完成交易。经历过以物易物的阶段后，人们发现以物易物的方式效率很低，而且共识的建立必须是双方面对面确认了交易物品价值，因此黄金、白银作为了第一代的货币出现了。
 
 我们这里拿出来货币的三种性质来对以下几种货币进行比较：
+1. 一种交换的媒介。 --- A medium of exchange
+2. 用来给物品或者服务标价。 --- A unit of amount
+3. 价值的载体。--- A store of value
 
-**第一代货币（Money 1.0）**，黄金、白银是所有人都承认的高价值物品，
+**第一代货币：实体货币（Money 1.0）** 黄金、白银、贝壳是过去所有人都 *承认* 的高价值物品。货币本质是一种convention，货币并不一定自身具有很高价值，只是大多数人们公认货币具有一定价值，因此在货币的定义期间，共识是十分重要的组成部分。下面我们来分析第一代货币的性质：
+1. 作为交换的媒介 --- 一般，只能用于面对面交易
+2. 用来给物品标价 --- 一般，可以被替代，不容易被分割价值，易于被仿造
+3. 价值的载体 --- 差，有些物品可能具有额外价值，或者有些物品可能内部损坏（拿贝壳来举例）
+
+**第二代货币：Trested Entity (Money 2.0)** 银行是人们都 *信任* 的实体机构
+
+1. 作为交换的媒介 --- 很好，非线下交易，不用现金交易，转账
+2. 用来给物品标价 --- 很好
+3. 价值的载体 --- 一般，和机构实体绑定，不排除银行破产等状况
+
+**第三代货币: Cryptocurrenty (Money 3.0)**
+
+# 密码学基础知识
+
+**Hash Funcions**
+
+- An algorithm that produces a fingerprint to a file.
+- H({1,0}*) -> {1,0}
+
+哈希方程的特点就是可以将任意长度的数字序列转换成一个固定长度的序列，并且无法通过简便方法找到两个相同的input对应同一个ouput(collision)
+
+Collision Attack: Find x,y H(x)=H(y)
+
+Second pre-image attack: Find H(x)=H(y) for given x
+
+Birthday paradox:
+
+
 
