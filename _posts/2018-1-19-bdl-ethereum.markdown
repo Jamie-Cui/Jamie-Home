@@ -82,8 +82,24 @@ categories: jekyll update
 
 因此contract帐号之间的相互交流是通过unsigned transaction，没有用到public key 形式。而外部拥有帐号不持有智能合约代码也不能建立里unsigned transaction。ps.需要了解到合约可以建立新的合约帐号。
 
-<!-- **状态机复制(State Machine Replication)** -->
+**状态机复制(State Machine Replication)**
 
+定义不是很理解，上图：
+
+<img src="{{site.url}}{{site.baseurl}}/img/state-machine.png" alt="Drawing" style="width: 600px;"/>
+
+比特币状态机复制：
+
+1. 比特币是一种特殊的状态机
+2. 总账本可以被认为是一个状态机标注了所有比特币当前的归属情况
+3. 比特币状态机的最初状态是创世块
+4. 改变状态时收到的input为当前状态和新的转账，然后输出一个新的状态
+
+以太坊状态机复制：
+
+1. 以太坊的状态机包含所有帐号的信息。
+2. 改变状态时收到的input为当前状态和新的转账，然后输出一个新的状态
+3. 矿工会追踪比特币帐号的余额并且实时更新
 
 **Gas**
 
@@ -101,6 +117,27 @@ Gas也是一种POW证明。在以太坊中智能合约的运行和转账的发�
 - Serpent
 - LLL
 - Mutant
+
+以太坊虚拟机(EVM)是智能合约运行的安全环境，每个矿工都在运行EVM。以太坊的智能合约由高级的编程语言完成实现，通过ABI转换成EVM可以理解的低层次语言。类似于Java。
+
+以下给出了两个solidity编写的合约：
+
+- (1) 基础合约
+
+<img src="{{site.url}}{{site.baseurl}}/img/solidity-1.png" alt="Drawing" style="width: 600px;"/>
+
+- (2) Token 系统
+
+<img src="{{site.url}}{{site.baseurl}}/img/solidity-2.png" alt="Drawing" style="width: 600px;"/>
+
+- (3) Event 和 Log
+
+<img src="{{site.url}}{{site.baseurl}}/img/solidity-3.png" alt="Drawing" style="width: 600px;"/>
+
+- (4) 复杂的合约
+
+<img src="{{site.url}}{{site.baseurl}}/img/solidity-4.png" alt="Drawing" style="width: 600px;"/>
+
 
 
 
