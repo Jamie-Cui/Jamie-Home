@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Ethereum & Smart COntract"
+title:  "Ethereum & Smart Contract"
 date:   2018-4-19 12:00:00 +0000
 categories: jekyll update
 ---
