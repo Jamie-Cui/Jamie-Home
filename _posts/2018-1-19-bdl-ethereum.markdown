@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Blockchains and Distributed Ledgers"
+title:  "Ethereum & Smart COntract"
 date:   2018-4-19 12:00:00 +0000
 categories: jekyll update
 ---
