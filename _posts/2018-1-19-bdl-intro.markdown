@@ -11,7 +11,16 @@ categories: jekyll update
    views: <span id="busuanzi_value_page_pv"></span>
 </span>
 
-`内容来源：维基百科`
+**本章讲解内容**
+
+1. 货币： 数字货币的起源
+2. 分布式总帐
+3. 共识
+4. 区块链的“块”
+5. 区块链总览
+6. 共识和分布式总帐的区别
+
+以下名词介绍`内容来源：维基百科`
 
 **区块链**（英语：blockchain 或 block chain）是用分布式数据库识别、传播和记载信息的智能化对等网络, 也称为价值互联网。中本聪在2008年，于《[比特币白皮书](https://bitcoin.org/bitcoin.pdf)》中提出“区块链”概念，并在2009年创立了比特币社会网络，开发出第一个区块，即“创世区块”。
 
@@ -101,8 +110,9 @@ categories: jekyll update
 - Termination： <img src="http://chart.googleapis.com/chart?cht=tx&chl= \forall i \in H, u_i" style="border:none;"> is defined 
 - Agreement： <img src="http://chart.googleapis.com/chart?cht=tx&chl= \forall i, j \in H, u_i=u_j" style="border:none;">
 - Validity： <img src="http://chart.googleapis.com/chart?cht=tx&chl= \exists v(\forall i \in H, v_i=v),(\forall i \in H, u_i=v)" style="border:none;">
+- Strong Validity: <img src="http://chart.googleapis.com/chart?cht=tx&chl= \forall i \in H, \exists j \in H(u_i=V_j)" style="border:none;">
 
-在上述定义中H代表着诚实参与者，翻译成人话如下：对于所有诚实参与者i和j，i和j的输出ui，uj相同。对于所有诚实参与者i，i的输出ui是固定的。诚实参与者的输入与输出相同。
+在上述定义中H代表着诚实参与者，翻译成人话如下：（可结束）对于所有诚实参与者i和j，i和j的输出ui一定会输出，也就是一定会结束。（全认同）对于所有诚实参与者i，i的输出ui是固定的。（值合法）诚实参与者的输入与输出相同。（强值合法）每个诚实参与者的输出一定可以做某个诚实参与者的输入。
 
 我们假设现在有两类诚实的参与者A1和A0,分别以0.5的概率持有1和0。
 
@@ -140,7 +150,7 @@ Proof-of-work：
 
 <img src="{{site.url}}{{site.baseurl}}/img/backbone.png" alt="Drawing" style="width: 600px;"/>
 
-# **区块链**
+# **区块链总览**
 
 要分析区块链，首先就要先建立区块链的一些假设（Adversary Model）：
 
@@ -185,5 +195,5 @@ Proof-of-work：
 1. 比特币的共识是用广播完成的，不是P2P
 2. 协议setup不是一个private correlated setup，比特币用的数字签名，并没有使用数字签名来校验矿工身份。
 
-因此我们使用总帐来解决共识问题。
+因此我们使用总帐来解决共识问题。共识一共有三个特性：可结束，全认同，值合法，观察为什么区块链满足了共识的这三个特性。
 
