@@ -11,13 +11,13 @@ categories: jekyll update
    views: <span id="busuanzi_value_page_pv"></span>
 </span>
 
-**本章讲解内容**
+# **本章讲解内容**
 
 1. 货币： 数字货币的起源
-2. 分布式总帐
-3. 共识
+2. 分布式总帐概念
+3. 什么是共识
 4. 区块链的“块”
-5. 区块链总览
+5. 区块链结构
 6. 共识和分布式总帐的区别
 
 以下名词介绍`内容来源：维基百科`
@@ -126,7 +126,7 @@ categories: jekyll update
 
 我们都知道区块链是一个“链”，数据结构中的一个名词。那么区块链是由什么基本元素组成行程一个链的？答案是块。
 
-块的数学表达式如下：<img src="http://chart.googleapis.com/chart?cht=tx&chl= B =<s, x, ctr>" style="border:none;"> s代表着指针指向之前区块; x代表着content，也就是转账记录transaction等信息;而ctrl是counter，代表着proof-of-work见证者。
+块的数学表达式如下：<img src="http://chart.googleapis.com/chart?cht=tx&chl= B =<s, x, ctr>" style="border:none;"> s代表着指针指向之前区块; x代表着content，也就是转账记录transaction等信息;而ctrl是counter，代表着proof-of-work见证者（其实就是nonce）。
 
 判断一个块是否有效： <img src="http://chart.googleapis.com/chart?cht=tx&chl= (H(ctr, G(s, x)) < T) and (ctr <= q)" style="border:none;">在这个判断式里面H和G分别代表了两种hash计算方法，T是target而q是upper bound 之后在proof-of-work会详细讲到。
 
@@ -134,7 +134,7 @@ categories: jekyll update
 
 <img src="http://chart.googleapis.com/chart?cht=tx&chl= s_i = H(ctr_i-1, G(s_i-1,x_i-1))" style="border:none;">
 
-在比特币中有四个核心算法组成了比特币协议，下图给了伪码。首先就是验证块是否有效：
+**例如**在比特币中有四个核心算法组成了比特币协议，下图给了伪码。首先就是验证块是否有效：
 
 <img src="{{site.url}}{{site.baseurl}}/img/chain-validation.png" alt="Drawing" style="width: 600px;"/>
 
@@ -184,6 +184,7 @@ Proof-of-work：
 <img src="http://chart.googleapis.com/chart?cht=tx&chl= \mu \approx \frac{n-2t}{n-t}" style="border:none;">
 
 那么这三个性质带来了什么？具体来说提供了区块链的persistence和liveness。
+
 - Persistence: Transactions are organized in a 'log' and honest nodes agree on it. --- Common Prefix
 - Liveness: New transactions are included in the log nodes, after a suitable period of time. --- Chain Growh and Chain Quality
 

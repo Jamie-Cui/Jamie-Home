@@ -6,7 +6,7 @@ description: >-
 baseurl: "/Jamie-Home"
 url: "https://jamie-cui.github.io" 
 
-github_username:  Jamie2Cui
+github_username:  Jamie-Cui
 permalink: /:title.html
 
 markdown: kramdown
