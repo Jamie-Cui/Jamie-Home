@@ -1,0 +1,71 @@
+---
+layout: post
+title:  "密码学基础 --- Cryptography"
+date:   2017-12-05 12:00:00 +0000
+categories: jekyll update
+---
+{% include add_favicon.html %}
+{% include add_views.html %}
+
+<span id="busuanzi_container_page_pv">
+   views: <span id="busuanzi_value_page_pv"></span>
+</span>
+
+# **密码学基础1：概念**
+
+**密钥(key)**：在密码学中密钥可以被当做一个加密或者解密的参数，当执行加密或者解密过程中会同密文(Cipher)或者明文(Message)一起输入到加密或者解密方程，从而达成目的。没有密钥是无法完成解密和加密过程，密钥分为两种：Secret Key 和 Public Key。
+
+**加密(Encryption)和解密(Decryption)**：加密就是利用公钥和明文来生成密文的过程，而解密是加密的反过程，是利用密文和私钥来还原明文的过程。加密和解密过程涵盖了整个密码学最基础的部分，而加密方程和解密方程还有传输模式是密码学主要考虑的问题。
+
+**对称\非对称加密(Symmetric\Asymmetric Encryption)**：加密和解密双方是否使用了相同的密钥来进行加密和解密，也就是密钥和私钥是否相同。
+
+**常见的威胁模型(Threat Model)**：再考虑是否安全的时候一定要注意建立正确的威胁模型，威胁模型描述了我们在设计加密协议或者探讨是否安全时对入侵者的考虑。常用的威胁模型有下面几种：
+1. 攻击者可以货渠到一些密文(ciphertexts) `c1,c2`
+2. 攻击者可以获取到一些对应的密文和原文(plaintext\ciphertexts) `(m1,c1)(m2,c2)......`
+3. 攻击者可以访问加密数据库 - 攻击者可以让用户去加密一条攻击者选择的明文
+4. 攻击者可以访问解密数据库 - 攻击者可以让用户去解密一条攻击者选择的密文
+5. 攻击者的计算能力，unlimited，polynomial，或者realistic (< 2^80)
+
+**Kerckhoff's principle**
+
+1. The encryption (E) and decryption (D) algorithms are public.
+2. The security relies entirely on the secrecy of the key.
+
+# **密码学基础2：数论**
+
+**组、循环组(Group)**
+
+组。在密码学中组的定义是组内元素运算（*）永远会得到组内的元素，具体定义如下（数学定义引用的是[google chart][google-chart]公式生成器，不能翻墙的同学可能看不到了），我们假设定义(G , *)为一个组：
+
+* 对于组内任意两个个元素g和h，<img src="http://chart.googleapis.com/chart?cht=tx&chl= g * h " style="border:none;"> 也是组内元素
+* 组内运算满足结合律 <img src="http://chart.googleapis.com/chart?cht=tx&chl= g * (h * m) = (g * h) * m" style="border:none;">
+* 组内存在e (identity element) 使得任意一个g， <img src="http://chart.googleapis.com/chart?cht=tx&chl= g * e = e * g = g" style="border:none;">
+* 组对于求逆也是闭合的，<img src="http://chart.googleapis.com/chart?cht=tx&chl= g^{-1} * g = g^{-1} * g = e" style="border:none;">
+
+对于一个有限的组G来说，G的order就是G组里面的所有元素个数。而对于组内的一个元素g来说，g的order就是能使该式成立的<img src="http://chart.googleapis.com/chart?cht=tx&chl= g^{i} = e" style="border:none;"> 最小的正整数i，*一定要注意这里G的order和g的order是不一样的*
+
+循环组：对于一个组G来说，组内存在一个元素g可以生成组内其他所有元素，而且g的order和G的order相同，此时我们把G叫做一个循环组(Cyclic Group)
+
+---
+
+例：如果我们现在取一个组 {1,2,3,4} ，组内运算是乘法mod5,我们的目标是找到一个g，使g的order为4：
+
+<img src="http://chart.googleapis.com/chart?cht=tx&chl= 2^{0} = 1" style="border:none;">    
+<img src="http://chart.googleapis.com/chart?cht=tx&chl= 2^{1} = 2" style="border:none;">   
+<img src="http://chart.googleapis.com/chart?cht=tx&chl= 2^{2} = 4" style="border:none;">  
+<img src="http://chart.googleapis.com/chart?cht=tx&chl= 2^{3} = 3" style="border:none;">  
+<img src="http://chart.googleapis.com/chart?cht=tx&chl= 2^{4} = 1" style="border:none;">
+
+我们可以看到 2 的 order 是 4，而整个组的order是 4，并且使用 2 可以生成组内的所有数，所以这个组是循环组，而2是这个组的一个generator。
+
+---
+
+# **密码学基础3：概率论**
+
+**完美的保密(Perfect Secrecy)**
+
+完美保密的数学定义如下，简单的用语言来概括就是任意取两个message用相同的key进行加密，生成的密文相同的概率相同。
+
+<img src="{{site.url}}{{site.baseurl}}/img/PerfectSecrecy.png" alt="Drawing" style="width: 400px;"/>
+
+[google-chart]:https://developers.google.com/chart/
