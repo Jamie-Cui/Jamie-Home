@@ -26,6 +26,11 @@ categories: jekyll update
 4. 攻击者可以访问解密数据库 - 攻击者可以让用户去解密一条攻击者选择的密文
 5. 攻击者的计算能力，unlimited，polynomial，或者realistic (< 2^80)
 
+**Kerckhoff's principle**
+
+1. The encryption (E) and decryption (D) algorithms are public.
+2. The security relies entirely on the secrecy of the key.
+
 # **密码学基础2：数论**
 
 **组、循环组(Group)**

@@ -1,7 +1,7 @@
 ---
 layout: page
 title:  " 目录"
-date:   2018-4-20 13:00:00 +0000
+date:   2018-5-7 13:00:00 +0000
 categories: jekyll update
 ---
 {% include add_favicon.html %}
@@ -11,7 +11,7 @@ categories: jekyll update
 
 关于油管视频的问题，我会不定期在B站更新感兴趣的油管视频（催更什么的去B站留言我一定会看到的），[戳我看B站](https://space.bilibili.com/8538797/#/)，求关注求硬币哈哈哈哈哈哈
 
-下学期课程已经出来了，目前为止学过的知识有：
+<!-- 下学期课程已经出来了，目前为止学过的知识有：
 
 - [现实案例](#)
 - [匿名系统（洋葱路由）](#)
@@ -19,24 +19,25 @@ categories: jekyll update
 - [计算机安全](#)
 - [密码学](#)
 - [安全编程](#)
-- [软件测试](#)
-- [Ubuntu备忘录](#ubuntu)
-
+- [Ubuntu备忘录](#ubuntu) -->
 
 # 现实案例
 
-1. [心脏出血漏洞]({{site.url}}{{site.baseurl}}/heartbleed)
+1. [心脏出血漏洞]({{site.url}}{{site.baseurl}}/example/heartbleed)
 
 #  匿名系统（洋葱路由）
 
-1. [洋葱路由的起点]({{site.url}}{{site.baseurl}}/hiding-routing-information)
-2. [第二代洋葱路由]({{site.url}}{{site.baseurl}}/tor)
+1. [洋葱路由的起点]({{site.url}}{{site.baseurl}}/anonymous/hiding-routing-information)
+2. [第二代洋葱路由]({{site.url}}{{site.baseurl}}/anonymous/tor)
 
 # 区块链和分布式总帐
 
-关于区块链和比特币的问题，可以看一下普林斯顿大学的免费公开课视频，之后也会根据这个视频和上课所学内容进行一步一步的更新，链接放在这里[《普林斯顿大学公开课：比特币技术》](https://www.youtube.com/channel/UCNcSSleedtfyDuhBvOQzFzQ)
+关于区块链和比特币的问题，可以看一下普林斯顿大学的免费公开课视频，之后也会根据这个视频和上课所学内容进行一步一步的更新，链接放在这里[《普林斯顿大学公开课：比特币技术》](https://www.youtube.com/channel/UCNcSSleedtfyDuhBvOQzFzQ)注意这只是一个入门课程。
 
 1. [入门第一课 --- Intro]({{site.url}}{{site.baseurl}}/bdl-intro)
+2. [以太坊和智能合约]({{site.url}}{{site.baseurl}}/bdl-ethereum)
+3. [区块链协议]({{site.url}}{{site.baseurl}}/bdl-blockchain-protocol)
+4. [区块链中的帐号]({{site.url}}{{site.baseurl}}/bdl-accounts)
 
 # 计算机安全
 
@@ -46,13 +47,9 @@ categories: jekyll update
 # 密码学
 
 1. [密码学基础]({{site.url}}{{site.baseurl}}/crypto)
-2. [密码学协议]({{site.url}}{{site.baseurl}}/crypto-protocol)
+2. [流加密]({{site.url}}{{site.baseurl}}/crypto-stream-cipher)
 
 # 安全编程
-
-# 软件测试
-
-1. [功能测试]({{site.url}}{{site.baseurl}}/st-functional-testing)
 
 # Ubuntu备忘录
 
