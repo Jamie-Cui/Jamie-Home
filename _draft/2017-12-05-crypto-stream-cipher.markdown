@@ -51,30 +51,33 @@ OTP是流加密中最简单也是最经典的一种，假设我们现在有一�
 
 # RC4
 
-RC4协议是在1987年被Ron Rivest发明的[介绍点这里][RC4-web]，RC4的全称为(Ron Cipher 4)人家有命名资格回合，而且Ron大佬还是著名顶顶RSA项目组中的头号人物，RSA是个常用的加密算法会在后面提到。 RC4包括两部分，初始化和密钥生成。目前在HTTPS和WEP中使用。
+RC4协议是在1987年被Ron Rivest发明的，RC4的全称为(Ron Cipher 4)人家有命名资格回合，而且Ron大佬还是著名顶顶RSA项目组中的头号人物，RSA是个常用的加密算法会在后面提到。 RC4包括两部分，初始化和密钥生成。目前在HTTPS和WEP中使用。
 
-在初始化阶段会生成一个长度为2048比特（256字节）的数组(值为0-255)。然后将数组顺序打乱。
-
-[RC4-web]:https://www.vocal.com/cryptography/rc4-encryption-algoritm/
+根据定义，RC4算法有两个阶段，1)初始化; 2)生成密钥流
 
 <img src="{{site.url}}{{site.baseurl}}/img/rc4.png" alt="Drawing" style="width: 400px;"/>
 
-接下来在每收到一个message字节时，(用某种算法)定位数组中的一位元素，然后和受到的字节做异或输出。改算法保证了每265次循环每个元素被定位一次。
+在初始化阶段会生成一个长度为2048比特（256字节）的数组(值为0-255)，并且将数组顺序打乱。在下面的代码中有
 
 ```
-// 初始化算法
+// 初始化算法，伪代码
 for i from 0 to 255
     S[i] := i
 endfor
 j := 0
 for( i=0 ; i<256 ; i++)
-    j := (j + S[i] + key[i mod keylength]) % 256
+    j := (j + S[i] + key[i mod keylength]) % 256//算出来一个j的值
     swap values of S[i] and S[j]
 endfor
 ```
 
+
+接下来在每收到一个message字节时，(用某种算法)定位数组中的一位元素，然后和受到的字节做异或输出。改算法保证了每265次循环每个元素被定位一次。
+
+
+
 ```
-// 定位算法
+// 定位算法，伪代码
 i := 0
 j := 0
 while GeneratingOutput:
