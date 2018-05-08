@@ -57,7 +57,7 @@ RC4协议是在1987年被Ron Rivest发明的，RC4的全称为(Ron Cipher 4)人�
 
 <img src="{{site.url}}{{site.baseurl}}/img/rc4.png" alt="Drawing" style="width: 400px;"/>
 
-在初始化阶段会生成一个长度为2048比特（256字节）的数组(值为0-255)，并且将数组顺序打乱。在下面的代码中有
+在初始化阶段会生成一个长度为2048比特（256字节）的数组(值为0-255)，并且将数组顺序打乱。在下面的代码中先生成一个S数组(顺序0-255)，之后按照算法(伪随机)交换S数组中的元素。key是固定的密钥(RC4的随机key生成是建立在固定密钥至上的)
 
 ```
 // 初始化算法，伪代码
@@ -71,37 +71,58 @@ for( i=0 ; i<256 ; i++)
 endfor
 ```
 
-
-接下来在每收到一个message字节时，(用某种算法)定位数组中的一位元素，然后和受到的字节做异或输出。改算法保证了每265次循环每个元素被定位一次。
-
-
+接下来是生成密钥流的算法，RC4算法保证了每256个循环中每个元素都会被遍历一次。
 
 ```
-// 定位算法，伪代码
+// 产生密钥流 算法，伪代码
 i := 0
 j := 0
 while GeneratingOutput:
-    i := (i + 1) mod 256   //a
-    j := (j + S[i]) mod 256 //b
-    swap values of S[i] and S[j]  //c
-    k := inputByte ^ S[(S[i] + S[j]) % 256]
+    i := (i + 1) mod 256   //
+    j := (j + S[i]) mod 256 //
+    swap values of S[i] and S[j]  //交换某两个元素
+    k := inputByte ^ S[(S[i] + S[j]) % 256]//input和某个元素二进制相加
     output K
 endwhile
 ```
 
 RC4有以下几个缺点：
-1. RC4的第一个字节
+
+1. 我们可以观察到在初始化算法中第一个字节的数据永远不会被交换，因此在实际计算过程中应该把第一个byte放到第256个位置上，以此来加入随机循环。
+2. 依然容易受到related key attacks(会在WEP中具体解释)，因为随机密钥生成还是基于固定的长期密钥。
 
 # WEP
 
-WEP全名叫做有线等效加密。
+WEP全名叫做有线等效加密，常用于无线通信加密。
 
 <img src="{{site.url}}{{site.baseurl}}/img/wep.png" alt="Drawing" style="width: 400px;"/>
 
+过程描述：IV为24bit的初始化向量，双方利用这个变量来借助RC4生成密钥流。在发送密文时会将IV贴合在密文前部(只获得IV并不能完全得到密钥，因为seed由IV和WEP key(固定key)组成)。
+
+缺点：
+
+1. two-time pad attack：IV只有24字节长，所以key会在2^24之后重用---应该使用更加长的IV
+2. FMS attack(related key attack)
+
+因为密钥生成固定使用IV和长期key，所以所有的密钥只有前24个字节不同。并且对于密文来说第一个byte的message永远是相同的(因为WEP的应用导致发送信息总有一个固定的header)，因此可以减少一个byte的计算量。
+
 # LFSR
+
+- 密钥空间：K = {0,1}^s
+- 寄存器R的长度：s
+- 初始化状态：R=k
+
+比较容易想象的结构。
 
 <img src="{{site.url}}{{site.baseurl}}/img/lfsr.png" alt="Drawing" style="width: 400px;"/>
 
+
+
 # CSS uses LFSR
+
+- 密钥空间：K = {0,1}^40
+- 寄存器R的长度：17bit的LFSR和25bit的LFSR
+- 初始化状态：R17=1||K[0-15]
+- 初始化状态:R25=1||K[16-39]
 
 <img src="{{site.url}}{{site.baseurl}}/img/css.png" alt="Drawing" style="width: 400px;"/>
