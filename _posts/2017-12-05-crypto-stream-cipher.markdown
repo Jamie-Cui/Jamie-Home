@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "流加密"
+title:  "流加密 --- Stream Cipher"
 date:   2018-5-07 12:00:00 +0000
 categories: jekyll update
 ---

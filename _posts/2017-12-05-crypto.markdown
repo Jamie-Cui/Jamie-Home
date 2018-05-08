@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "密码学基础 --- Cryptography"
+title:  "学习密码学需要了解什么？ --- Cryptography"
 date:   2017-12-05 12:00:00 +0000
 categories: jekyll update
 ---
@@ -69,3 +69,4 @@ categories: jekyll update
 <img src="{{site.url}}{{site.baseurl}}/img/PerfectSecrecy.png" alt="Drawing" style="width: 400px;"/>
 
 [google-chart]:https://developers.google.com/chart/
+

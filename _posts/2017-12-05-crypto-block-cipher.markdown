@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "块加密"
+title:  "块加密 --- Block Cipher"
 date:   2018-5-07 12:00:00 +0000
 categories: jekyll update
 ---
@@ -34,9 +34,66 @@ DES，全称(Data Encryption Standard)数据加密标准，是一种块加密的
 因此我们有了3DES，3DES的目标是阻止暴力破解，经常被用在银行卡和RFID芯片上，算法如下：
 
 - E_3DES((K1,K2,K3),M) = E_DES(K1,E_DES(K2,E_DES(K3,M)))
-- D_3DES((K1,K2,K3),M) = D_DES(K3,D_DES(K2,D_DES(K1,C)))
+- D_3DES((K1,K2,K3),C) = D_DES(K3,D_DES(K2,D_DES(K1,C)))
 - 密钥长度 3*56 = 168 bits
 
 同时，因为3DES涉及到的运算是DES的3倍，虽然它保证了加密不会受到暴力破解，但是缺导致了运行缓慢。因此3DES的主要应用是需要绝对安全，不注重效率(ATM就是一个很好的例子)。
 
 因为3DES具有2^168的密钥空间，已经远远超过目前计算机的算力了，为什么不用2DES？2DES也同样具有2^112的密钥空间，同样远超目前计算机的算力。
+
+和3DES类似，2DES算法：
+
+- E_2DES((K1,K2),M) = E_DES(K1,E_DES(K2,M)))
+- D_2DES((K1,K2),C) = D_DES(K2,D_DES(K1,C))
+
+<img src="{{site.url}}{{site.baseurl}}/img/2DES.png" alt="Drawing" style="width: 500px;"/>
+
+2DES容易收到**meet-in-the-middle-attack**，从而使破解2DES的难度从2^112减少到2^63。具体攻击方法为：首先针对第一个DES对于m和所有key空间的密钥计算出第一个DES结果的全部2^56可能性;同样我们针对第二个DES从后向前计算出第二个DES输入的2^56可能性，然后分别将这两种DES从小到大排序，复杂度为log(2^56)。因此破解的复杂度为：2^56*log(2^56)*2 < 2^63。因此2DES是不安全的。
+
+# AES
+
+因为DES各类的种种缺点(3DES太慢，2DES和DES不安全)，人们发明了AES(进阶加密标准)。
+
+- 块大小128比特
+- 密钥长度128,192,256比特
+
+<img src="{{site.url}}{{site.baseurl}}/img/AES.png" alt="Drawing" style="width: 700px;"/>
+
+其中m是4×4位的矩阵。我们将每轮的AES操作分为以下几个步骤：
+
+1. AddRoundKey： 初始矩阵中的每个元素都和输入的key尽行XOR运算
+2. SubBytes：建立当前矩阵中查询元素所需要的查询表
+3. ShiftRows：将矩阵的行列进行循环移位
+4. MixColumns：每行元素都和一个固定的的多项式做乘法
+
+针对AES的攻击有
+
+- related-key attack
+- key-recovery attack
+
+# Padding
+
+我们可以看到上面的各种加密算法都要求明文长度固定，那么，如果我们有一个长度较短的明文怎么办？
+
+- bit padding： 在明文后先添加一个字节的1,其余字节全部填充0
+- ANSI X.923：在明文之后填充0,最后一个字节写入填充的位数
+- PKCS 7：填充第一位为1,之后以此类推
+
+# ECB 模式
+
+Electronic Code Book
+
+- 首先将输入的任意长度的M做padding让m的长度能整除可接受长度
+- 将m分割成可接受长度的块
+- 对于每个块进行加密得到密文
+- 将密文合在一起
+
+缺点：
+
+不适用图像加密，因为没有很好的隐藏掉空间信息
+
+# CTR 模式 和 CBC 模式
+
+Cipher-block chaining
+
+Counter mode

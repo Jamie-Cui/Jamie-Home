@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Blockchains and Distributed Ledgers"
+title:  "区块链和分布式总帐 --- Blockchains and Distributed Ledgers"
 date:   2018-4-18 12:00:00 +0000
 categories: jekyll update
 ---

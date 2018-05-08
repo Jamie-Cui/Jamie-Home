@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Ethereum & Smart Contract"
+title:  "以太坊和智能合约 --- Ethereum & Smart Contract"
 date:   2018-4-19 12:00:00 +0000
 categories: jekyll update
 ---
