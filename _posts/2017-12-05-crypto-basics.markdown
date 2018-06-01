@@ -74,7 +74,7 @@ MAC全名为Message Authentication Codes，MAC在发送信息时会将hash信息
 
 # DH key exchange
 
-对称密钥交换
+对称密钥交换。
 
 # RSA
 
@@ -95,3 +95,4 @@ MAC全名为Message Authentication Codes，MAC在发送信息时会将hash信息
 <img src="{{site.url}}{{site.baseurl}}/img/NSPK.png" alt="Drawing" style="width: 500px;"/>
 
 <img src="{{site.url}}{{site.baseurl}}/img/nspk-attack.png" alt="Drawing" style="width: 500px;"/>
+
