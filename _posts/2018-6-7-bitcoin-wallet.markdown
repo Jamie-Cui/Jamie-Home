@@ -19,17 +19,22 @@ categories: jekyll update
 
 # 什么是比特币钱包
 
-什么是比特币就不讲了。。。
+比特币钱包，按照官网上的定义就是一个用来管理用户比特币帐号的一个软件。根据官网上的定义，比特币钱包按照根据功能分为一下几类：全服务钱包、签名钱包、离线钱包、硬件钱包和仅分发钱包。
 
-比特币钱包，按照官网上的定义就是一个用来管理用户比特币帐号的一个软件。根据官网上的定义，比特币钱包按照根据功能分为一下几类：
+# 密钥格式 (secp256k1 ECDSA)
 
-1. 全服务钱包
-2. 签名钱包
-3. 离线钱包
-4. 硬件钱包
-5. 只分发钱包
+在比特币中，私钥和公钥是比特币账户惟一的标识符。用户可以使用私钥来进行数字签名从而发起转账，或者使用公钥作为收款地址来接受比特币。需要明白的是一般情况下建立比特币帐号会生成一个私钥 ，再根据私钥生成密钥。
 
-# HD钱包
+1. 私钥 32byte - 256bit
+2. 未压缩公钥 65byte - 520bit
+3. 压缩公钥 33byte - 264bit
+
+公钥在比特币转账中扮演了很重要的角色，而比特币的鲁棒性也大多数和公钥的鲁棒性有关，因此保证公钥在多次复制过程中保证正确性很重要。WIF为钱包导入格式，定义了一个稳定性比较高的公钥格式。
+
+1. 在公钥地址前加上一字节，对于比特币网络是0x80，对于测试网络是0xef
+2. 如果
+
+# HD钱包(BIP32 and BIP44)
 
 为什么要提出HD钱包？比特币系统希望用户每次转账都随机生成密钥来使用，因为这样的话比特币钱包的安全性就不仅局限于一对密钥的安全，成功盗取账户就需要盗取账户所有的密钥。
 
@@ -39,6 +44,7 @@ categories: jekyll update
 
 HD钱包很好的解决了这个问题，HD钱包不需要频繁的进行密钥备份，而椭圆曲线数学公式允许在不泄露私钥的情况下计算出公钥。
 
-> 椭圆数学公式：比特币使用[ECDSA公钥](https://en.bitcoin.it/wiki/Elliptic_Curve_Digital_Signature_Algorithm)(Elliptic Curve Digital Signature Algorithm)，y^2 = x^3 + 7，在这个公式中x、y都是32byte，分别代表private key和public key。
+> 椭圆数学公式：比特币使用[ECDSA公钥](https://en.bitcoin.it/wiki/Elliptic_Curve_Digital_Signature_Algorithm)(Elliptic Curve Digital Signature Algorithm)，y^2 = x^3 + a，（下图显示了椭圆函数的图）具体算法很复杂。
+
 
 <img src="{{site.url}}{{site.baseurl}}/img/ECDSA.png" alt="Drawing" style="width: 600px;"/>
