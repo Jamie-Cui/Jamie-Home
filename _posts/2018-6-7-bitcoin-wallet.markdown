@@ -37,7 +37,7 @@ categories: jekyll update
 6. 将四个检验和的byte放到延长后的公钥之前，生成新的公钥
 7. 使用bash58将byte转换成string
 
-而对于私钥来说，格式为Mini private key format，具体如下：
+而对于私钥来说，也需要将其转换成string格式，Mini private key format，具体生成方式如下：
 
 1. 
 
