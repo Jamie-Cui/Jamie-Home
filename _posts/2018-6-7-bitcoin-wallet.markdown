@@ -44,9 +44,7 @@ categories: jekyll update
 3. 计算sha256，在私钥中随机添加随机数，直到生成的sha256前两个字节均为'0'
 4. 为了取回私钥，直接计算sha256（？）
 
-ECDSA公钥私钥又名椭圆曲线数字签名，针对的是未被压缩的公钥和私钥(y^2=x^3+7)。在ECDSA中，曲线中某个点为公钥，65byte，其中1个byte为指示曲线上方或者曲线下方，32byte y坐标， 32byte x坐标。
-
-y^2 = x^3 + a，（下图显示了椭圆函数的图）具体算法很复杂。<img src="{{site.url}}{{site.baseurl}}/img/ECDSA.png" alt="Drawing" style="width: 600px;"/>
+ECDSA公钥私钥又名椭圆曲线数字签名，针对的是未被压缩的公钥和私钥(y^2=x^3+7)。在ECDSA中，曲线中某个点为公钥，65byte，其中1个byte为指示曲线上方或者曲线下方，32byte y坐标， 32byte x坐标。 y^2 = x^3 + a，（下图显示了椭圆函数的图）具体算法很复杂。<img src="{{site.url}}{{site.baseurl}}/img/ECDSA.png" alt="Drawing" style="width: 600px;"/>
 
 
 ## HD钱包(BIP32 and BIP44)
