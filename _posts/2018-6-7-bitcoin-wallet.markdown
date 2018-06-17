@@ -39,7 +39,15 @@ categories: jekyll update
 
 而对于私钥来说，也需要将其转换成string格式，Mini private key format，具体生成方式如下：
 
-1. 
+1. 首字节为'S'
+2. 为了检查私钥是不是使用了Mini private key,私钥中添加了'?'
+3. 计算sha256，在私钥中随机添加随机数，直到生成的sha256前两个字节均为'0'
+4. 为了取回私钥，直接计算sha256（？）
+
+ECDSA公钥私钥又名椭圆曲线数字签名，针对的是未被压缩的公钥和私钥(y^2=x^3+7)。在ECDSA中，曲线中某个点为公钥，65byte，其中1个byte为指示曲线上方或者曲线下方，32byte y坐标， 32byte x坐标。
+
+y^2 = x^3 + a，（下图显示了椭圆函数的图）具体算法很复杂。<img src="{{site.url}}{{site.baseurl}}/img/ECDSA.png" alt="Drawing" style="width: 600px;"/>
+
 
 ## HD钱包(BIP32 and BIP44)
 
@@ -50,8 +58,3 @@ categories: jekyll update
 > 为什么通常情况下钱包需要备份？首先比特币的转账分为两部分，转账的发起者和转账的接收者。而每一个比特币账户都持有特定的一对标记符（公钥和私钥），简单的说公钥的作用是接受比特币而私钥的作用是进行数字签名以花出比特币。因此在一笔比特币转账中，会记录转账发起者的数字签名以及转账接收者的公钥信息。那么接下来就是比特币的状态机机制了，比特币系统中不以帐号为单位保存帐号余额，而是以上一笔转账验证的形式来完成下一笔转账。简单的来说如果我现在想花5个比特币，那么在发起转账是比特币系统不会要求我提供信息证明自己帐号余额中有5个比特币，而是要我证明之前有5比特币的转账记录是由我作为接收者。以此在比特币钱包中如果要管理多个密钥对，那么一定要对之前用过的密钥对进行备份，以用来花费转账到之前公钥地址的比特币。
 
 HD钱包很好的解决了这个问题，HD钱包不需要频繁的进行密钥备份，而椭圆曲线数学公式允许在不泄露私钥的情况下计算出公钥。
-
-> 椭圆数学公式：比特币使用[ECDSA公钥](https://en.bitcoin.it/wiki/Elliptic_Curve_Digital_Signature_Algorithm)(Elliptic Curve Digital Signature Algorithm)，y^2 = x^3 + a，（下图显示了椭圆函数的图）具体算法很复杂。
-
-
-<img src="{{site.url}}{{site.baseurl}}/img/ECDSA.png" alt="Drawing" style="width: 600px;"/>
