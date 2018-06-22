@@ -11,15 +11,21 @@ categories: jekyll update
 
 关于油管视频的问题，我会不定期在B站更新感兴趣的油管视频（催更什么的去B站留言我一定会看到的），[戳我看B站](https://space.bilibili.com/8538797/#/)，求关注求硬币哈哈哈哈哈哈
 
-<!-- 下学期课程已经出来了，目前为止学过的知识有：
+补充一下之后要补全的学习记录：
 
-- [现实案例](#)
-- [匿名系统（洋葱路由）](#)
-- [区块链和分布式总帐](#)
-- [计算机安全](#)
-- [密码学](#)
-- [安全编程](#)
-- [Ubuntu备忘录](#ubuntu) -->
+1. OPTEE 手机端比特币钱包的实现
+2. 密码学Commitment scheme, DH, DDH, CDH, Zero-Knowledge-Proof, Digital Signature, garbled circuit（可以的话读一些论文）
+3. 基础的安全编程
+    - buffer overflow (heap/stack/format string)
+    - integer overflow
+    - CSRF
+    - XSS
+    - SQL injection
+    - Command injection
+    - zero-day-sploit
+    - type safety/ memory safety/ static analysis/ dynamic analysis
+4. cmake and makefile
+5. hyperledger
 
 # 现实案例
 
