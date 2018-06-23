@@ -59,7 +59,7 @@ categories: jekyll update
 
 # Ubuntu备忘录
 
-**文本编辑器**： [vscode](https://code.visualstudio.com/download)
+**文本编辑器（适合博客）**： [vscode](https://code.visualstudio.com/download)
 
 微软出品的最符合我口味的文本编辑器，虽然速度比不上sublime，也输给了神之编辑器vim和emacs，但是还是比atom等等好一点，最好用的一点就是这东西可以直接下载各种扩展！微软爸爸！修改起来什么也是比较方便，还集成了terminal git，一件提交修改不是梦。
 
@@ -72,6 +72,7 @@ categories: jekyll update
 6. vscode-icons             ：图标
 7. word count               ：字数统计
 
+**文本编辑器（适合写代码）**: sublime/ vim
 
 **开发环境设置**
 
@@ -109,14 +110,27 @@ sudo gem install bundler
 bundle install//保证更新
 git clone https://github.com/Jamie2Cui/Jamie-Home.git
 cd Jamie-Home
-bundle exec jekyll serve
+sudo bundle exec jekyll serve
 ~~~
 
 **娱乐**
 
 - [网易云音乐](https://music.163.com/#/download) 比腾讯不知道良心多少的网易提供了linux版本网易云音乐的播放器
 
+**实用软件**
 
+safe eyes
+~~~
+sudo add-apt-repository ppa:slgobinath/safeeyes
+sudo apt update
+sudo apt install safeeyes
+~~~
 
+indicator-sysmonitor
+~~~
+sudo add-apt-repository ppa:fossfreedom/indicator-sysmonitor
+sudo apt-get update
+sudo apt-get install indicator-sysmonitor
+~~~
 
 [hacker-url]:https://www.youtube.com/watch?v=vg9cNFPQFqM&list=WL
