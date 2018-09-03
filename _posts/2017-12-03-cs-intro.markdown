@@ -48,7 +48,5 @@ Patch是软件公司发现软件漏洞后的最后的补救方法，因此系统
 这个是废话。。。当然所有人都应该安装杀毒软件
 
 
-
-
 [advise-sheets]:https://www.gov.uk/government/publications/10-steps-to-cyber-security-advice-sheets
 [example-priv]:http://krebsonsecurity.com/2013/10/experian-sold-consumer-data-to-id-theft-service/

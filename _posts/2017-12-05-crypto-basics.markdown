@@ -76,6 +76,8 @@ MAC全名为Message Authentication Codes，MAC在发送信息时会将hash信息
 
 对称密钥交换。
 
+# Digital Signature
+
 # RSA
 
 - G_RSA = (pk.sk), pk = (N,e), sk = (N,d), e*d = 1(mod N)

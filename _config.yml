@@ -11,5 +11,5 @@ permalink: /:title.html
 
 markdown: kramdown
 theme: minima
-plugins:
+plugins_dir:
   - jekyll-feed
