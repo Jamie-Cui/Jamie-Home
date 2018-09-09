@@ -106,11 +106,6 @@ The advantages for symmetric cryptographuc algrothms is simple and fast, because
 - 3DES, key size: 168.
 - AES, block size: 128; key size: 128, 192, 256.
 
-Cryptographic primitives (other than encryption)
-
-1. Message Authentication Code (MAC)
-2. Hash Functions
-
 ---
 # Asymmetric Cryptographic Algorithms (public key cryptography)
 
