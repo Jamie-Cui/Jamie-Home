@@ -177,3 +177,26 @@ Based on DH Key exchange, and also proved secure in IND-CPA (Indistinguishble Ch
 Why RSA failes? Suppose we choose two messages m0=0 m1=1, and encrypt them using RSA we have c0=m0^e mod n, c1=m1^e mod n. Clearly c0=0 and c1=1, which means if the output is 1 we can confirm it's c1 or otherwise c0. The advarsary can disinguish the output with 100% possibility. In fact, all deterministic public-key incryption schemes fail IND-CPA.
 
 How about ElGamal? Simialrly we choose two messages m0 and m1, (c0-0 \|\| c0-1)=(g^y \|\| m0^s) and (c1-0 \|\| c1-1)=(g^y \|\| m1^s), we may notice there is a random value involved in the output cipher which makes the output differs everytime even if with the same encryption key and imput message. Also we can use mathematical method to prove the possibility of advarsary win IND-CPA game is 50%, which is euivalant to random guess.
+
+---
+# Zero Knowledge Proof
+
+---
+# Mix net
+
+---
+# Blind Signature
+
+---
+# Distributing trust
+
+1. Secret Sharing
+2. Shamir’s Secret Sharing Scheme
+3. Distributing Decryption Capabilities
+4. Publicly Verifiable Secret Sharing
+5. Distributing the Dealer
+
+---
+# Private information retrival
+
+# Homomonic Encryption
