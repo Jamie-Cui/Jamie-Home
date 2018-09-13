@@ -81,19 +81,27 @@ DES，全称(Data Encryption Standard)数据加密标准，是一种块加密的
 
 ## ECB: Electronic Code Book 模式
 
+The simplest of the encryption modes is the Electronic Codebook (ECB) mode (named after conventional physical codebooks[10]). The message is divided into blocks, and each block is encrypted separately.
+
 - 首先将输入的任意长度的M做padding让m的长度能整除可接受长度
 - 将m分割成可接受长度的块
 - 对于每个块进行加密得到密文
 - 将密文合在一起
 
-缺点：
-
-不适用图像加密，因为没有很好的隐藏掉空间信息
+缺点：不适用图像加密，因为没有很好的隐藏掉空间信息
 
 ## CBC: Cipher-block chaining
 
+ In CBC mode, each block of plaintext is XORed with the previous ciphertext block before being encrypted. This way, each ciphertext block depends on all plaintext blocks processed up to that point. To make each message unique, an initialization vector must be used in the first block.
+
 ## CFB: Cipher Feedback
+
+The Cipher Feedback (CFB) mode, a close relative of CBC, makes a block cipher into a self-synchronizing stream cipher. Operation is very similar; in particular, CFB decryption is almost identical to CBC encryption performed in reverse:
 
 ## OFB: Output Feedback
 
+The Output Feedback (OFB) mode makes a block cipher into a synchronous stream cipher. It generates keystream blocks, which are then XORed with the plaintext blocks to get the ciphertext. Just as with other stream ciphers, flipping a bit in the ciphertext produces a flipped bit in the plaintext at the same location. This property allows many error correcting codes to function normally even when applied before encryption.
+
 ## CTR: Counter (CTR)
+
+ike OFB, Counter mode turns a block cipher into a stream cipher. It generates the next keystream block by encrypting successive values of a "counter". The counter can be any function which produces a sequence which is guaranteed not to repeat for a long time, although an actual increment-by-one counter is the simplest and most popular. The usage of a simple deterministic input function used to be controversial; critics argued that "deliberately exposing a cryptosystem to a known systematic input represents an unnecessary risk."[19] However, today CTR mode is widely accepted and any problems are considered a weakness of the underlying block cipher, which is expected to be secure regardless of systemic bias in its input.[20] Along with CBC, CTR mode is one of two block cipher modes recommended by Niels Ferguson and Bruce Schneier.
