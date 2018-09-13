@@ -79,9 +79,7 @@ DES，全称(Data Encryption Standard)数据加密标准，是一种块加密的
 - ANSI X.923：在明文之后填充0,最后一个字节写入填充的位数
 - PKCS 7：填充第一位为1,之后以此类推
 
-# ECB 模式
-
-Electronic Code Book
+## ECB: Electronic Code Book 模式
 
 - 首先将输入的任意长度的M做padding让m的长度能整除可接受长度
 - 将m分割成可接受长度的块
@@ -92,8 +90,10 @@ Electronic Code Book
 
 不适用图像加密，因为没有很好的隐藏掉空间信息
 
-# CTR 模式 和 CBC 模式
+## CBC: Cipher-block chaining
 
-Cipher-block chaining
+## CFB: Cipher Feedback
 
-Counter mode
+## OFB: Output Feedback
+
+## CTR: Counter (CTR)
