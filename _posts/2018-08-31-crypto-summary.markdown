@@ -6,44 +6,48 @@ categories: jekyll update
 ---
 {% include add_favicon.html %}
 {% include add_views.html %}
----
+
 # Before the beginning...
 
-Cryptography can be divided into three catogories: ***Classic Cryptography***, ***Symmetric Cryptography*** and ***Asymmetric Cryptography (or Public Key Cryptography)***. And in the following part, this post will disscuss modern cryptography: symmetric cryptography and asymmetric crytography.
+Cryptography can be divided into three catogories: *Classic Cryptography*, *Symmetric Cryptography* and *Asymmetric Cryptography (or Public Key Cryptography)*. And in the following part, this post will disscuss modern cryptography: symmetric cryptography and asymmetric crytography.
 
-Most of the asymmetric cryptography algorithms base on mathematical problems for security issue, they are ***Discrete Logarithm***, ***Integer Factorization*** and ***Elliptic Curve***. Those problems can not be solved in polynomial time and thus can be used to buid a "trapdoor" function, which only allows one-way calculation. They can also be considered as ***cryptographic primitives***, which are frequently used to build cryptographic protocols and computer security systems. (It also includes trapdoor hash function, authentication, symmetric key cryptography, public key cryptography, digital signatures, mix network, commitment scheme etc.) 
+Most of the asymmetric cryptography algorithms base on mathematical problems for security issue, they are ***Discrete Logarithm***, ***Integer Factorization*** and ***Elliptic Curve***. Those problems can not be solved in polynomial time and thus can be used to buid a "trapdoor" function, which only allows one-way calculation. They can also be considered as *cryptographic primitives*, which are frequently used to build cryptographic protocols and computer security systems. (It also includes trapdoor hash function, authentication, symmetric key cryptography, public key cryptography, digital signatures, mix network, commitment scheme etc.) 
 
 From a more abstract perspective, the mathematical problems can be summarized as the ***"NP"*** problem, which is the findamental open problems in computer science. NP problem relates to two classes P and NP. P is the set of problems that can be solved in polynomial time and NP is the set of problems can be verified in polynomial time. Despite the significant effort from researchers, it is still unknown if P!=NP. However, ***many proofs of security would imply P!=NP***.
 
 > "Find factors, get money" - Notorious T.K.G.
 
-As for ***cryptographic protocols***, they are abstract or concrete protocols that performs a security-related function and applies cryptographic methods, often as sequences of cryptographic primitives. 
+As for *cryptographic protocols*, they are abstract or concrete protocols that performs a security-related function and applies cryptographic methods, often as sequences of cryptographic primitives. 
 
 Cryptographic protocols can sometimes be verified formally on an abstract level. When it is done, there is a necessity to formalize the environment in which the protocol operate in order to identify threats. This is frequently done through the Dolev-Yao (姚期智) model.
 
+# Terminology
+
+**Encryption and Decryption** (protecting confidenntiality) A message is *plaintext*. The process of disguising a message in such a way as to hide its substance is encryption. An encrypted message is *ciphertext*. The process of turning ciphertext back into plaintext is decryption. The encryption process is *Enc(plaintext) = ciphertext*; Decryption process is *Dec(ciphertext) = plaintext*; The *correctness* of Encryption and Decryption is *Dec(Enc(plaintext)) = plaintext*.
+
+**Authentication, Integrity and Nonrepudiation** Other than confidentiality, social interactions also require cryptography to provide other functions such as authentication, integrity and nonrepudication. Related protocols are ***Message Authentication Code (MAC)***, which is a samll piece of informtion used to autenticate a message, protecting both authentication and integrity.
+
+**Algorithms and Keys** A cryptographic algorithm, also called a cipher, is the mathematical function used for encryption and decryption (Usually there are encryption function and decryption function for one cipher). Sometimes to encrypt or decrypt, an algorithm requires an addional infromation, which is denoted as the keys (encryption key and decryption key). Encryption key is used to encrypt messages while decryption key is used to decrypt the corresponding ciphertext (Remeber they appear in pairs). A cryptosystem is an algorithm, plus all possible plain texts, cipher texts, and keys.
+
+**Symmetric Algorithms**, sometimes called conventional algorithms, are algorithms where the encryption key can be calculated from the decryption key and vice versa (usually public key = private key). Symmetric algorithms can be divided into two catogories: ***Stream cipher*** and ***Block cipher***.
+
+**Public-Key Algorithms** (also called asymmetric algorithms) are designed so that the key used for encryption is different from the key used for decryption. Furthermore, the decryption key cannot (at least in any reasonable amount of time) be calculated from the encryption key.
+
+**Cryptanalysis** is the science of recovering the plaintext of a message without access to the key. Successful cryptanalysis may recover the plaintext or the key. It also may find weaknesses in a cryptosystem that eventually lead to the previous results. There are four general types of cryptanalytic attacks. Of course, each of them assumes that the cryptanalyst has complete knowledge of the encryption algorithm used. ***Ciphertext-only attack***: Cryptanalysis has the ciphertext of several messages using the same encryption secheme and same key, the objective is to recover the plaintext message. ***Known-plaintext attack***: The cryptanalyst has access not only to the ciphertext of several messages, but also to the plaintext of those messages, objective is to get the encrypt key or build a decrypt function decrypting the future ciphertexts. ***Chosen-plaintext attack***: The cryptanalyst not only has access to the ciphertext and associated plaintext for several messages, but he also chooses the plaintext that gets encrypted, the objective is to deduce the key. ***Adaptive-chosen-plaintext attack***: Not only can the cryptanalyst choose the plaintext that is encrypted, but he can also modify his choice based on the results of previous encryption.
+
 ---
+
 # Discrect Logarithm
 
-There are 3 related mahematical problems: DL, CDH, DDH.
+Discrete logarithms are quickly computable in a few special cases. However, no efficient method is known for computing them in general. Several important algorithms in public-key cryptography base their security on the assumption that the discrete logarithm problem over carefully chosen groups has no efficient solution. There are 3 related mahematical problems: DL, CDH, DDH.
 
-> Discrete Logarithm problem: Find a interger x, such that g^x = y
+**Discrete Logarithm (DL)**: Find a interger x, such that g^x = y. There is no proof that this problem is hard, to the best of our knowledge, the number of steps necessary to find a solution is super-polynomial in the size of the group element, assuming the group is chosen appropriately.
 
-> Computational Diffie-Hellman problem: Given a cyclic group G with generator g, order m. Given g^a, g^b, compute g^ab, where a, b are random numbers smaller than m.
+**Computational Diffie-Hellman (CDH)**: Given a cyclic group G with generator g, order m. Given g^a, g^b, compute g^ab, where a, b are random numbers smaller than m. It s clear that if an advarsary could solve DL, he could also solve CDH with a single exponentiation. This would imply that CDH <= DL
 
-> Decisioanl Diffie-Hellman problem:  Given a cyclic group G with generator g, order m. Given g^a, g^b, g^c, decide if c=ab, where a, b, c are random numbers smaller than m.
+**Decisioanl Diffie-Hellman (DDH)**:  Given a cyclic group G with generator g, order m. Given g^a, g^b, g^c, decide if c=ab, where a, b, c are random numbers smaller than m.
 
 Computational complexity: DL>=CDH>=DDH
-
-**Key-exchange**
-
-1. Alice and Bob agree on the algorithm parameters p (group order) and g (group generater).
-2. Alice and Bob generates their own secret indepently, naming a and b.
-3. Alice computes g^a mod p to Bob, and Bob then computes (g^a)^b mod p
-4. Bob computes g^b mod p to Alice, and Alice then computes (g^b)^a mod p
-
-**Correctness** (g^a)^b mod p = (g^b)^a mod p
-
-**[TODO] Proof of the security DDH**
 
 # Elliptic Curve
 
@@ -57,9 +61,9 @@ EC is one of the most difficult cryptographic algorithms to understand, so the f
 
 As an additive group, any two points on a curve add to produce a third point on the curve (due to its property). Notice this is not a vector addition. On the elliptic curve, adding points p1 and p2 is viewed as projecing a line between p1 and p2 to form the point of joint with the curve. The joining point is the resulting point p3.
 
-换句话说，在椭圆曲线中任意选取曲线上的两个点(p1, p2)作延长线，一定有另一个与曲线相连的交点(p3)，除非该线与x轴垂直。我们将这个操作成为“相加” (p1+p2=p3)。利用这个性质，我们定义了一个点的“逆”：如果存在一个点p(x,y)，那么它的逆就是(x,-y)。这是因为椭圆曲线是根据x轴完全对称的。再者我们定义0为椭圆曲线的无穷远，因此对于任意三个在椭圆曲线上的点来说 p1+p2+p3=0 是一定成立的(如果不能组成一条线也算作成立)。
+<!-- 换句话说，在椭圆曲线中任意选取曲线上的两个点(p1, p2)作延长线，一定有另一个与曲线相连的交点(p3)，除非该线与x轴垂直。我们将这个操作成为“相加” (p1+p2=p3)。利用这个性质，我们定义了一个点的“逆”：如果存在一个点p(x,y)，那么它的逆就是(x,-y)。这是因为椭圆曲线是根据x轴完全对称的。再者我们定义0为椭圆曲线的无穷远，因此对于任意三个在椭圆曲线上的点来说 p1+p2+p3=0 是一定成立的(如果不能组成一条线也算作成立)。
 
-有人评价椭圆曲线是“一群大神们苦心搜索，终于找到一个诡异的加法运算”。其实所有密码学问题的核心都是找到哪个trapdoor，并且保证trapdoor的安全，目前有DL, Intefer factorization and Elliptic Curve。下图给出了一个椭圆曲线的例子以便于更好的阐述椭圆曲线trapdoor的原理。
+有人评价椭圆曲线是“一群大神们苦心搜索，终于找到一个诡异的加法运算”。其实所有密码学问题的核心都是找到哪个trapdoor，并且保证trapdoor的安全，目前有DL, Intefer factorization and Elliptic Curve。下图给出了一个椭圆曲线的例子以便于更好的阐述椭圆曲线trapdoor的原理。 -->
 
 <img src="{{site.url}}{{site.baseurl}}/img/EC.jpg" alt="Drawing" style="width: 200px;"/>　
 
@@ -80,10 +84,10 @@ As an additive group, any two points on a curve add to produce a third point on 
 - ECDSA
 
 
----
 # Hash
 
 Security game:
+
 - Hiding
 - Binding
 
@@ -106,7 +110,6 @@ The advantages for symmetric cryptographuc algrothms is simple and fast, because
 - 3DES, key size: 168.
 - AES, block size: 128; key size: 128, 192, 256.
 
----
 # Asymmetric Cryptographic Algorithms (public key cryptography)
 
 Often related to mathematical problems, such as integer factorization, discrete logarithm and elliptic curve. Do not require a initial secret exchange process. Because of the computational complexity of asymmetric encryption, it is usually used only for small blocks of data, typically the transfer of a symmetric encryption key.
@@ -121,14 +124,11 @@ Security Game:
 - UF-CMA (Unforgeability under a chosen message attack) --- digital signature
 - EU-CMA (Existential Unforgeability under a Chosen Message Attack) --- digital signature
 
----
 # RSA
 
 RSA cryptosystem is developed in 1977 by Rivest, Shamir and Adleman. It was the first public-key encryption scheme which could both sign and encrypt messages. As with the Diffie-Hellman key exchange protocol, the RSA cryptosystem enables two parties to communicate over a public channel.
 
-**For Encryption** 
-
-Suppose Alice wants to send Bob a secure message over an insecure public channel.
+**For Encryption** Suppose Alice wants to send Bob a secure message over an insecure public channel.
 
 - Bob selects two distinct large prime number *p* and *q*, and compute *n = p\*q*.
 - Bob randomly chooses an integer *e* *(1 < e < <img src="http://chart.googleapis.com/chart?cht=tx&chl=\varphi (n)" style="border:none;">)*, then find *d* which satisfies *e\*d mod <img src="http://chart.googleapis.com/chart?cht=tx&chl=\varphi (n)" style="border:none;"> = 1*.
@@ -137,7 +137,7 @@ Suppose Alice wants to send Bob a secure message over an insecure public channel
 
 Nonsensitive data: n, e; Confidential data: p, q, toient function of n, d. The security parameter is the serilised number of key, which equals to the serilised phi(n).
 
-**Proof of Correctness** 
+**Proof of Correctness** 6
 
 Dec(Enc(m)) : <img src="http://chart.googleapis.com/chart?cht=tx&chl= m=(m^e\quad mod\quad n)^d = m^{e*d}\quad mod\quad n" style="border:none;">
 
@@ -154,7 +154,6 @@ if *n* and *a* are coprime, then  <img src="http://chart.googleapis.com/chart?ch
 
 **My thought** The security of RSA encryption bases on both *DL* and *integer factorization*. For DL, it makes it impossible to calculated message from cipher under PPT. For integer factorization, it is impossible to calculated the private key by taking advatage of the public key (unless the factorization of encryption modular n is known).
 
----
 # ELGamal
 
 Based on DH Key exchange, and also proved secure in IND-CPA (Indistinguishble Chosen-plaintext attack) model.
