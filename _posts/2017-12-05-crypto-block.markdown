@@ -90,18 +90,32 @@ The simplest of the encryption modes is the Electronic Codebook (ECB) mode (name
 
 缺点：不适用图像加密，因为没有很好的隐藏掉空间信息
 
+<img src="{{site.url}}{{site.baseurl}}/img/aes-ecb.png" alt="Drawing" style="width: 700px;"/>
+
 ## CBC: Cipher-block chaining
 
- In CBC mode, each block of plaintext is XORed with the previous ciphertext block before being encrypted. This way, each ciphertext block depends on all plaintext blocks processed up to that point. To make each message unique, an initialization vector must be used in the first block.
+每个加密块在加密前都与前面的一个块的密文做XOR运算。第一个块和IV做XOR
+
+In CBC mode, each block of plaintext is XORed with the previous ciphertext block before being encrypted. This way, each ciphertext block depends on all plaintext blocks processed up to that point. To make each message unique, an initialization vector must be used in the first block.
+
+PCBC： 每个加密块在加密前都与前面的一个块以及前一个块加密后做XOR运算。第一个块和IV做XOR
+
+<img src="{{site.url}}{{site.baseurl}}/img/aes-cbc.png" alt="Drawing" style="width: 700px;"/>
 
 ## CFB: Cipher Feedback
 
 The Cipher Feedback (CFB) mode, a close relative of CBC, makes a block cipher into a self-synchronizing stream cipher. Operation is very similar; in particular, CFB decryption is almost identical to CBC encryption performed in reverse:
 
+<img src="{{site.url}}{{site.baseurl}}/img/aes-cfb.png" alt="Drawing" style="width: 700px;"/>
+
 ## OFB: Output Feedback
 
 The Output Feedback (OFB) mode makes a block cipher into a synchronous stream cipher. It generates keystream blocks, which are then XORed with the plaintext blocks to get the ciphertext. Just as with other stream ciphers, flipping a bit in the ciphertext produces a flipped bit in the plaintext at the same location. This property allows many error correcting codes to function normally even when applied before encryption.
 
+<img src="{{site.url}}{{site.baseurl}}/img/aes-ofb.png" alt="Drawing" style="width: 700px;"/>
+
 ## CTR: Counter (CTR)
 
 Like OFB, Counter mode turns a block cipher into a stream cipher. It generates the next keystream block by encrypting successive values of a "counter". The counter can be any function which produces a sequence which is guaranteed not to repeat for a long time, although an actual increment-by-one counter is the simplest and most popular. The usage of a simple deterministic input function used to be controversial; critics argued that "deliberately exposing a cryptosystem to a known systematic input represents an unnecessary risk."[19] However, today CTR mode is widely accepted and any problems are considered a weakness of the underlying block cipher, which is expected to be secure regardless of systemic bias in its input.[20] Along with CBC, CTR mode is one of two block cipher modes recommended by Niels Ferguson and Bruce Schneier.
+
+<img src="{{site.url}}{{site.baseurl}}/img/aes-ctr.png" alt="Drawing" style="width: 700px;"/>
