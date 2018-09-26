@@ -77,7 +77,7 @@ DES，全称(Data Encryption Standard)数据加密标准，是一种块加密的
 
 - bit padding： 在明文后先添加一个字节的1,其余字节全部填充0
 - ANSI X.923：在明文之后填充0,最后一个字节写入填充的位数
-- PKCS 7：填充第一位为1,之后以此类推
+- PKCS 7
 
 ## ECB: Electronic Code Book 模式
 
