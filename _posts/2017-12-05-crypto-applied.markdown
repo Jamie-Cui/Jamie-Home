@@ -15,6 +15,15 @@ From a higher perspective, MPC tries to solve a calculation problem where each p
 
 # Secret Sharing
 
+In a secrect sharing scheme, a set of players posses pieces of information that combine to form a common "secret". Unless the number of involved players exceeds a certain threshold, none can recontruct or obtain any information about the secret.
+
+**Shamir's Secret Sharing Scheme**
+
+<img src="{{site.url}}{{site.baseurl}}/img/shamir.png" alt="Drawing" style="width: 700px;"/>
 
 
-[1]  Reference from wikipedia: [https://en.wikipedia.org/wiki/Secure_multi-party_computation](https://en.wikipedia.org/wiki/Secure_multi-party_computation)
+
+---
+# Reference
+
+[1]  Wikipedia, Secure multi-party computation, url: [https://en.wikipedia.org/wiki/Secure_multi-party_computation](https://en.wikipedia.org/wiki/Secure_multi-party_computation)
