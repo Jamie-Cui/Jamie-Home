@@ -29,15 +29,13 @@ However homomorphic encryption schemes are inherently [malleable](https://en.wik
 
 <img src="{{site.url}}{{site.baseurl}}/img/group_hm.png" alt="Drawing" style="width: 300px;"/>
 
->Reference: Figure 2.1, Chapter 2.1, Yi, X., Bertino, E., & Paulet, R. (2014). Homomorphic encryption and applications (SpringerBriefs in computer science). Cham: Springer.
+>Reference: Figure 2.1, Chapter 2.1 [2]
 
 **Unpadded RSA**
 
 <img src="http://chart.googleapis.com/chart?cht=tx&chl= E(m)= m^e\quad mod\quad n" style="border:none;">, where *e* is the private key and *n* is the group order.
 
-<img src="http://chart.googleapis.com/chart?cht=tx&chl= E(x_1)\cdot E(x_2)= x_1^e \cdot x_2^e\quad mod\quad n = E(x_1 \cdot x_2)" style="border:none;">
-
-Unpadded RSA is multiplicative homomorphic.
+<img src="http://chart.googleapis.com/chart?cht=tx&chl= E(x_1)\cdot E(x_2)= {x_1}^e \cdot {x_2}^e\quad mod\quad n = E(x_1 \cdot x_2)" style="border:none;">
 
 **ElGamal**
 
@@ -47,9 +45,31 @@ Unpadded RSA is multiplicative homomorphic.
 
 **Goldwasser-Micali**
 
-1. Key Generation: 
+In the Goldwasser–Micali cryptosystem, if the public key is the modulus m and quadratic non-residue x, then the encryption of a bit b is <img src="http://chart.googleapis.com/chart?cht=tx&chl= E(b) = x^b\quad r^2\quad mod\quad m" style="border:none;">, where <img src="http://chart.googleapis.com/chart?cht=tx&chl= r \in (0, \quad m-1)" style="border:none;">
+
+<img src="http://chart.googleapis.com/chart?cht=tx&chl= E(b_1)\cdot E(b_2)= x^{b_1}\quad {r_1}^2\quad x^{b_2}\quad {r_2}^2\quad mod \quad m = x^{b_1 %2B b_2} \quad (r_1 r_2)^2\quad mod \quad m " style="border:none;">
+
+
+**Benaloh**
+
+An extension of Goldwasser-Micali cryptosystem. In the Benaloh cryptosystem, if the public key is the modulus m and the base g with a blocksize of c, then the encryption of a message x is <img src="http://chart.googleapis.com/chart?cht=tx&chl= E(x) = g^x\quad r^c\quad mod\quad m" style="border:none;">, where <img src="http://chart.googleapis.com/chart?cht=tx&chl= r \in (0, \quad m-1)" style="border:none;">
+
+<img src="http://chart.googleapis.com/chart?cht=tx&chl= E(x_1)\cdot E(x_2)= g^{x_1}\quad {r_1}^c\quad g^{x_2}\quad {r_2}^c\quad mod \quad m = g^{x_1 %2B x_2} \quad (r_1 r_2)^c\quad mod \quad m " style="border:none;">
+
+
+**Paillier**
+
+In the Paillier cryptosystem, if the public key is the modulus m and the base g, then the encryption of a message x is <img src="http://chart.googleapis.com/chart?cht=tx&chl= E(x) = g^x\quad r^m\quad mod\quad m^2" style="border:none;">, where <img src="http://chart.googleapis.com/chart?cht=tx&chl= r \in (0, \quad m-1)" style="border:none;">
+
+<img src="http://chart.googleapis.com/chart?cht=tx&chl= E(x_1)\cdot E(x_2)= g^{x_1}\quad {r_1}^m\quad g^{x_2}\quad {r_2}^m\quad mod \quad m^2 = g^{x_1 %2B x_2} \quad (r_1 r_2)^m\quad mod \quad m^2 " style="border:none;">
+
+**Fully homomorphic encryption**
+
+Fully homomorphic encryption (FHE) techniques allow one to evaluate both addition and multiplication of plaintext, while remaining encrypted. The concept of FHE was introduced by Rivest under the name privacy homomorphisms. The problem of constructing a scheme with these properties remained unsolved until 2009, when Gentry presented his breakthrough result. His scheme allows arbitrary computation on the ciphertexts and it yields the correct result when decrypted. 
 
 ---
 # Reference
 
 [1]  Wikipedia, Secure multi-party computation, url: [https://en.wikipedia.org/wiki/Secure_multi-party_computation](https://en.wikipedia.org/wiki/Secure_multi-party_computation)
+
+[2] Yi, X., Bertino, E., & Paulet, R. (2014). Homomorphic encryption and applications (SpringerBriefs in computer science). Cham: Springer.
