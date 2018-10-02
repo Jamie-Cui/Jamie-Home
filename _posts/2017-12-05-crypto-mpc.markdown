@@ -21,7 +21,33 @@ In a secrect sharing scheme, a set of players posses pieces of information that 
 
 <img src="{{site.url}}{{site.baseurl}}/img/shamir.png" alt="Drawing" style="width: 700px;"/>
 
+# Homomorphic Encryption
 
+Homomorphic encryption is a form of cryptographic encryption algorithm which is capable of computation of plaintexts by manipulating ciphertexts. The purpose of homomorphic encryption is to allow compuation plaintext without any prior knowledge about the plaintext.	
+
+However homomorphic encryption schemes are inherently [malleable](https://en.wikipedia.org/wiki/Malleability_(cryptography)), so homomorphic schemes have weaker security proteries than non-homomorphic schemes.
+
+<img src="{{site.url}}{{site.baseurl}}/img/group_hm.png" alt="Drawing" style="width: 300px;"/>
+
+>Reference: Figure 2.1, Chapter 2.1, Yi, X., Bertino, E., & Paulet, R. (2014). Homomorphic encryption and applications (SpringerBriefs in computer science). Cham: Springer.
+
+**Unpadded RSA**
+
+<img src="http://chart.googleapis.com/chart?cht=tx&chl= E(m)= m^e\quad mod\quad n" style="border:none;">, where *e* is the private key and *n* is the group order.
+
+<img src="http://chart.googleapis.com/chart?cht=tx&chl= E(x_1)\cdot E(x_2)= x_1^e \cdot x_2^e\quad mod\quad n = E(x_1 \cdot x_2)" style="border:none;">
+
+Unpadded RSA is multiplicative homomorphic.
+
+**ElGamal**
+
+<img src="http://chart.googleapis.com/chart?cht=tx&chl= E(m)= (g^r, m \cdot h^r)" style="border:none;">, where <img src="http://chart.googleapis.com/chart?cht=tx&chl= r \in (0,\quad \dots\quad, m-1),\quad h = g^x" style="border:none;">
+
+<img src="http://chart.googleapis.com/chart?cht=tx&chl= E(x_1)\cdot E(x_2)= (g^{r_1}, m \cdot h^{r_1})\cdot (g^{r_2}, m \cdot h^{r_2}) = (g^{r_1\quad %2B \quad r_2}, m \cdot h^{r_1\quad %2B \quad r_2}) = E(x_1 %2B x_2)" style="border:none;">
+
+**Goldwasser-Micali**
+
+1. Key Generation: 
 
 ---
 # Reference
