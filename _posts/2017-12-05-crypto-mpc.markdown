@@ -65,7 +65,13 @@ In the Paillier cryptosystem, if the public key is the modulus m and the base g,
 
 **Fully homomorphic encryption**
 
-Fully homomorphic encryption (FHE) techniques allow one to evaluate both addition and multiplication of plaintext, while remaining encrypted. The concept of FHE was introduced by Rivest under the name privacy homomorphisms. The problem of constructing a scheme with these properties remained unsolved until 2009, when Gentry presented his breakthrough result. His scheme allows arbitrary computation on the ciphertexts and it yields the correct result when decrypted. 
+Fully homomorphic encryption (FHE) techniques allow one to evaluate both addition and multiplication of plaintext, while remaining encrypted. The concept of FHE was introduced by Rivest under the name privacy homomorphisms. The problem of constructing a scheme with these properties remained unsolved until 2009, when Gentry presented his breakthrough result. His scheme allows arbitrary computation on the ciphertexts and it yields the correct result when decrypted.
+
+For integers,  Marten van Dijk, Craig Gentry, Shai Halevi and Vinod Vaikuntanathan presented a homomorphic encryption scheme in 2010 [3].
+
+- KeyGen: odd integer p, ranging from (2^{x-1}, 2^x)
+- Enc: Enc_bit(p, m) = pq + 2r +m, where q, r are chosen randomly, and 4r \< p
+- Dec: Dec(p, c) = (c mod p) mod 2
 
 ---
 # Reference
@@ -73,3 +79,5 @@ Fully homomorphic encryption (FHE) techniques allow one to evaluate both additio
 [1]  Wikipedia, Secure multi-party computation, url: [https://en.wikipedia.org/wiki/Secure_multi-party_computation](https://en.wikipedia.org/wiki/Secure_multi-party_computation)
 
 [2] Yi, X., Bertino, E., & Paulet, R. (2014). Homomorphic encryption and applications (SpringerBriefs in computer science). Cham: Springer.
+
+[3] Marten, van Dijk; Gentry, Craig; Halevi, Shai; Vinod, Vaikuntanathan. "Fully Homomorphic Encryption over the Integers". EUROCRYPT 2010. Springer.
