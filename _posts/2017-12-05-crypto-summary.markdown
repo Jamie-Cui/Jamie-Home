@@ -86,9 +86,17 @@ As an additive group, any two points on a curve add to produce a third point on 
 
 在椭圆曲线算法中，将倍数d做为私钥，将Q做为公钥。当然，椭圆曲线算法还有更严格的计算过程，相对图示要复杂的多。
 
-
 - ECDH
 - ECDSA
+
+# Lattice-based cryptography
+
+Lattice-based cryptography is the general form of constructions of cryptographic primitives that involves lattice, either in the construction itself or in the security proof. Lattice based cryptography is a important candicate of post-quantum cryptography, which may still remains secure on the presence of quantum computer.
+
+> Definition of Lattice: A lattice L belongs to n-dimention real numebr space is the set of all integers liner combination of basis vector b1, b2 .... bn.
+
+The most crucial problem in lattice based cryptography is [Shortest Vector Problem(SVP)](https://en.wikipedia.org/wiki/Lattice_problem)
+
 
 # Symmetric Cryptographic Algorithms
 
