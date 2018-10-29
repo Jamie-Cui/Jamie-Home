@@ -21,6 +21,12 @@ In a secrect sharing scheme, a set of players posses pieces of information that 
 
 <img src="{{site.url}}{{site.baseurl}}/img/shamir.png" alt="Drawing" style="width: 700px;"/>
 
+**Blakley's scheme**
+
+Two nonparallel lines in the same plane intersect at exactly one point. Three nonparallel planes in space intersect at exactly one point. More generally, any n nonparallel (n − 1)-dimensional hyperplanes intersect at a specific point. The secret may be encoded as any single coordinate of the point of intersection. If the secret is encoded using all the coordinates, even if they are random, then an insider (someone in possession of one or more of the (n − 1)-dimensional hyperplanes) gains information about the secret since he knows it must lie on his plane. If an insider can gain any more knowledge about the secret than an outsider can, then the system no longer has information theoretic security. If only one of the n coordinates is used, then the insider knows no more than an outsider (i.e., that the secret must lie on the x-axis for a 2-dimensional system). Each player is given enough information to define a hyperplane; the secret is recovered by calculating the planes' point of intersection and then taking a specified coordinate of that intersection. 
+
+**Chinese remainder theorem**
+
 # Homomorphic Encryption
 
 Homomorphic encryption is a form of cryptographic encryption algorithm which is capable of computation of plaintexts by manipulating ciphertexts. The purpose of homomorphic encryption is to allow compuation plaintext without any prior knowledge about the plaintext.	
@@ -69,9 +75,16 @@ Fully homomorphic encryption (FHE) techniques allow one to evaluate both additio
 
 For integers,  Marten van Dijk, Craig Gentry, Shai Halevi and Vinod Vaikuntanathan presented a homomorphic encryption scheme in 2010 [3].
 
-- KeyGen: odd integer p, ranging from (2^{x-1}, 2^x)
-- Enc: Enc_bit(p, m) = pq + 2r +m, where q, r are chosen randomly, and 4r \< p
-- Dec: Dec(p, c) = (c mod p) mod 2
+# Making Hommomorphic Encryption Pratical
+
+**Electronical Medical Records**
+
+Consider a futuristic scenario where devices continuously collect vital health information, and stream them to
+a server who then computes some statistics (over these measurements, and over the course of time) and presumably
+decides on the course of treatment (e.g., whether the dosage of medicine should be changed). The volume of the data involved is large, and thus, the patient presumably does not want to store and manage all this data locally; she may prefer to use cloud storage and computation. To protect patient privacy, all the data is uploaded in encrypted form, and thus the cloud must perform operations on the encrypted data in order to return (encrypted) alerts, predictions, or summaries of the results to the patient.[4]
+
+*For these functions, it suffices to have a somewhat homomorphic encryption system which
+computes many additions and a small number of multiplications on ciphertexts.*
 
 ---
 # Reference
@@ -81,3 +94,5 @@ For integers,  Marten van Dijk, Craig Gentry, Shai Halevi and Vinod Vaikuntanath
 [2] Yi, X., Bertino, E., & Paulet, R. (2014). Homomorphic encryption and applications (SpringerBriefs in computer science). Cham: Springer.
 
 [3] Marten, van Dijk; Gentry, Craig; Halevi, Shai; Vinod, Vaikuntanathan. "Fully Homomorphic Encryption over the Integers". EUROCRYPT 2010. Springer.
+
+[4] Michael Naehrig, Kristin Lauter, and Vinod Vaikuntanathan. 2011. Can homomorphic encryption be practical?. In Proceedings of the 3rd ACM workshop on Cloud computing security workshop (CCSW '11). ACM, New York, NY, USA, 113-124. DOI=http://dx.doi.org/10.1145/2046660.2046682 
