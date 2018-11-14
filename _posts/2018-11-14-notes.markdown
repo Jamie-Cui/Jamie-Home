@@ -1,0 +1,49 @@
+---
+layout: page
+title:  "面试笔记"
+date:   2018-6-7 13:00:00 +0000
+categories: jekyll update
+---
+{% include add_favicon.html %}
+{% include add_views.html %}
+
+# Bitcoin/Etherum
+公链，矿工自愿参与不需要授权。
+## 从矿工的角度来思考 | 共识协议
+共识协议对矿工而言分为两个部分，第一个部分是争取块的发布权力（发布新的区块链可以获取“劳务费”）；而第二部分就是接收其他矿工发布的块，并将其添加到自己所持有的区块链中。
+### 区块链中的PoW、PoS
+这时会产生一些问题：矿工如何争取到块的发布权力？如何能保证矿工诚实得将接受到的区块链写入到自己的区块链中？
+
+我们先考虑第一个问题，如何争取到块的发布权力？为什么矿工想要争取块的发布权力？在比特币中存在两个激励机制以激励矿工进行“挖矿”：创建“块”的固定工资(随时间递减)和转账人付给矿工的转账费。
+
+那么就到了第二个问题，如何能保证矿工诚实的将接收到的区块链写入到自己的区块链中。我们假设一个区块链网络中有4个矿工{A, B, C, D}，在某个时间点前矿工们持有的账本一直是一致的，并且矿工之间的交流使用PKI，我们首先假设A得到了新块的发布权力，那么A会将新的块广播到整个网络中。之后矿工们开始信息同步，B矿工会先后与A，C，D三个矿工进行同步获取三个其他矿工的区块链，如果有超过一半的矿工拥有相同的区块链，则认为该条区块链是“可信的”。
+
+如果不使用PKI结构呢？
+
+### 传统共识协议 Paxos、PBFT和RAFT
+## 从用户的角度来思考 | 转账
+# Hyperledger Fabric
+联盟链，矿工需要准许进入。
+##Prerequisites:
+- cURL
+- Docker
+- Go, particularly $GOPATH should be configured
+- Node.js and NPM
+- Python
+##Install Samples, Binaries and Docker Images:
+1. Clone repository hyperledger/fabric-samples
+2. Download and setup binaries and docker images ./scripts/bootstrap.sh
+3. Download Go SDK, hyperledger/fabric-sdk-go
+
+# 密码学
+- 群密码学，椭圆曲线密码学，晶格密码学
+- 加密解密
+- 数字签名
+- 消息验证码
+- 密钥交换协议
+- 零知识证明：交互式（Schnorr）非交互式<y, c, s> = <g^t , H(g^t ), t + H(g^t )w mod m>
+- 秘密共享
+- 同态加密：部分同态加密，部分全同态加密
+- 环签名群签名 盲签名
+- 区块链中的PoW和PoS以及隐私问题
+
