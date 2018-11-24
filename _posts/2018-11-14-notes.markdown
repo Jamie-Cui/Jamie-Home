@@ -7,6 +7,17 @@ categories: jekyll update
 {% include add_favicon.html %}
 {% include add_views.html %}
 
+- 群密码学，椭圆曲线密码学，晶格密码学
+- 加密解密
+- 数字签名
+- 消息验证码
+- 密钥交换协议
+- 零知识证明：交互式（Schnorr）非交互式<y, c, s> = <g^t , H(g^t ), t + H(g^t )w mod m>
+- 秘密共享
+- 同态加密：部分同态加密，部分全同态加密
+- 环签名群签名 盲签名
+- 区块链中的PoW和PoS以及隐私问题
+
 # Bitcoin/Etherum
 公链，矿工自愿参与不需要授权，属于无门槛分布式系统。
 
